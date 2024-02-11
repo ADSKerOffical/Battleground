@@ -1,0 +1,343 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
+
+local Window = OrionLib:MakeWindow({Name = "Budgie Hub | AnM battlegrounds", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Characters",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Gojo"
+})
+
+Tab:AddButton({
+	Name = "Powerful red",
+	Callback = function()
+	local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Red" then
+       v.Parent = LP.Character
+   end
+end
+      		for i = 1, 15 do
+      game:GetService("Players").LocalPlayer.Character.Red.Script.Event:FireServer()
+      end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Spam Pull",
+	Callback = function()
+	local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Technique Pull" then
+       v.Parent = LP.Character
+   end
+end
+      		while wait(0.1) do
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Technique Pull").Blue.Event:FireServer()
+end
+  	end
+})
+
+Tab:AddButton({
+	Name = "Transformation",
+	Callback = function()
+      		local args = {
+    [1] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Transformation"):FireServer(unpack(args))
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Sukuma"
+})
+
+Tab:AddButton({
+	Name = "Powerful Slash",
+	Callback = function()
+      		for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Black Flash").LocalScript.Slash1:FireServer()
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Powerful Slaughter Demon",
+	Callback = function()
+      		for i = 1, 10 do
+      game:GetService("Players").LocalPlayer.Character:FindFirstChild("Slaughter Demon").LocalScript.Event:FireServer()
+      end
+  	end   
+})
+
+Tab:AddButton({
+ Name = "Activate ult",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("KingofCurses"):FireServer()
+   end    
+})
+
+Tab:AddLabel("Ult version")
+
+Tab:AddButton({
+ Name = "Multi Fire",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Remtoes"):WaitForChild("Fire"):FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Multi regen",
+ Callback = function()
+ local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Reverse Cursed Technique" then
+       v.Parent = LP.Character
+   end
+end
+        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Reverse Cursed Technique").Script.Event:FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Domain",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("MalevolentShrine"):FireServer()
+   end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Toji"
+})
+
+Tab:AddButton({
+	Name = "Machine gun",
+	Callback = function()
+	local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Glock" then
+       v.Parent = LP.Character
+   end
+end
+      		while task.wait() do
+game:GetService("Players").LocalPlayer.Character.Glock.LocalScript.Shot:FireServer()
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Powerful Throat Slit",
+	Callback = function()
+	local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Throat Slit" then
+       v.Parent = LP.Character
+   end
+end
+      		for i = 1, 15 do
+      game:GetService("Players").LocalPlayer.Character:FindFirstChild("Throat Slit").LocalScript.Event:FireServer()
+      end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Mega ground strike",
+	Callback = function()
+	local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Through out Earth" then
+       v.Parent = LP.Character
+   end
+end
+      		for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Through out Earth").Script.Event:FireServer()
+end
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Saitama"
+})
+
+Tab:AddButton({
+	Name = "Real blow",
+	Callback = function()
+	local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Serious Punch" then
+       v.Parent = LP.Character
+   end
+end
+      		for i = 1, 30 do
+      game:GetService("Players").LocalPlayer.Character:FindFirstChild("Serious Punch").Punch.Event:FireServer()
+      end
+  	end    
+})
+
+local Section = Tab:AddSection({
+ Name = "Luffy"
+})
+
+Tab:AddButton({
+ Name = "Powerful Pistol",
+ Callback = function()
+ local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Pistol" then
+       v.Parent = LP.Character
+   end
+end
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Character.Pistol.Move.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Bazooka",
+ Callback = function()
+ local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Bazooka" then
+       v.Parent = LP.Character
+   end
+end
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Character.Bazooka.Move.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Axe",
+ Callback = function()
+ local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Battle Axe" then
+       v.Parent = LP.Character
+   end
+end
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Battle Axe").Move.Event:FireServer()
+end
+   end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "More",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+ Name = "Anti purple shot",
+ Callback = function()
+        local player = game:GetService("Players").LocalPlayer
+while task.wait() do
+local parts = workspace:GetPartBoundsInRadius(player.Character:WaitForChild("HumanoidRootPart").Position, 10)
+for _, part in ipairs(parts) do
+part.CanTouch = fasle
+end
+end
+   end    
+})
+
+Tab:AddToggle({
+	Name = "Anti slow",
+	Default = false,
+	Callback = function(Value)
+	EEr = Value
+		while EEr do
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+		wait()
+		end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Anti inventory lock",
+	Default = false,
+	Callback = function(Value)
+	Sw = Value
+		while Sw do
+		local StarterGui = game:GetService("StarterGui")
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+
+local sgui = game:GetService("StarterGui")
+sgui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+		wait()
+		end
+	end    
+})
+
+Tab:AddDropdown({
+	Name = "Input Character",
+	Default = "1",
+	Options = {"Gojo", "Sukuma", "Toji", "Saitama", "Luffy"},
+	Callback = function(Value)
+		if Value == "Gojo" then
+		local args = {
+    [1] = "Gojo Young"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+		end
+		if Value == "Sukuma" then
+		local args = {
+    [1] = "Yuji / Sukuna"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+		end
+		if Value == "Toji" then
+		local args = {
+    [1] = "Toji"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+		end
+		if Value == "Saitama" then
+		local args = {
+    [1] = "Saitama"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+		end
+		if Value == "Luffy" then
+		local args = {
+    [1] = "Luffy"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+		end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Godmode",
+	Default = false,
+	Callback = function(Value)
+	God = Value
+		while God do
+		wait(0.1)
+		if game:GetService("Players").LocalPlayer.Character.Humanoid.Health < 10 then
+		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("KingofCurses"):FireServer()
+end
+		end
+	end    
+})
