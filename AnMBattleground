@@ -22,7 +22,7 @@ for i,v in pairs(LP.Backpack:GetChildren()) do
        v.Parent = LP.Character
    end
 end
-      		for i = 1, 15 do
+      		for i = 1, 10 do
       game:GetService("Players").LocalPlayer.Character.Red.Script.Event:FireServer()
       end
   	end    
@@ -335,8 +335,12 @@ Tab:AddToggle({
 	God = Value
 		while God do
 		wait(0.1)
-		if game:GetService("Players").LocalPlayer.Character.Humanoid.Health < 10 then
-		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("KingofCurses"):FireServer()
+		if game:GetService("Players").LocalPlayer.Character.Humanoid.Health < 30 then
+		local args = {
+    [1] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Transformation"):FireServer(unpack(args))
 end
 		end
 	end    
