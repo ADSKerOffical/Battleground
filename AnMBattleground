@@ -23,8 +23,8 @@ for i,v in pairs(LP.Backpack:GetChildren()) do
    end
 end
       		for i = 1, 10 do
-      game:GetService("Players").LocalPlayer.Character.Red.Script.Event:FireServer()
-      end
+game:GetService("Players").LocalPlayer.Character.Red.aka.Event:FireServer()
+end
   	end    
 })
 
@@ -38,8 +38,8 @@ for i,v in pairs(LP.Backpack:GetChildren()) do
        v.Parent = LP.Character
    end
 end
-      		while wait(0.1) do
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Technique Pull").Blue.Event:FireServer()
+      		while wait(0.2) do
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Technique Pull").ao.Event:FireServer()
 end
   	end
 })
@@ -47,12 +47,8 @@ end
 Tab:AddButton({
 	Name = "Transformation",
 	Callback = function()
-      		local args = {
-    [1] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Transformation"):FireServer(unpack(args))
-  	end    
+      	  game:GetService("Players").LocalPlayer.Character:FindFirstChild("The Honored One").Script.Event:FireServer()
+      end    
 })
 
 local Section = Tab:AddSection({
@@ -238,6 +234,179 @@ end
    end    
 })
 
+local Section = Tab:AddSection({
+	Name = "Hakari"
+})
+
+Tab:AddButton({
+	Name = "Powerful ball",
+	Callback = function()
+      		for i = 1, 20 do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pachinko"):FireServer()
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "To cut in half",
+	Callback = function()
+      		for i = 1, 15 do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ShutterDoors"):FireServer()
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Powerful beating",
+	Callback = function()
+      		for i = 1, 10 do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("LuckyBeatdown"):FireServer()
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Transformation",
+	Callback = function()
+      		game:GetService("ReplicatedStorage"):WaitForChild("Domainthing"):FireServer()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Spawn containers",
+	Callback = function()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ContainerKick"):FireServer()
+	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Sakuya"
+})
+
+Tab:AddButton({
+ Name = "Spam knife throw",
+ Callback = function()
+        while true do
+ wait()
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Knife Throw").Knife.Fire:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Spam knife burst",
+ Callback = function()
+        while true do
+ wait()
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Knives Burst").Knife.Fire:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Spam knife wall",
+ Callback = function()
+        while true do
+  wait(0.2)
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Sense of Thrown Edge").Knife.Fire:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful wound sign",
+ Callback = function()
+        for i = 1, 15 do
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Wound Sign").Script.Event:FireServer()
+end
+   end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Kenjaku(OP Character)"
+})
+
+Tab:AddButton({
+ Name = "Powerful squid cursed",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Squid Curse").Move1.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Spam mini utzumaki(OP)",
+ Callback = function()
+ 
+ local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Mini Uzumaki" then
+       v.Parent = LP.Character
+   end
+end
+ 
+        while true do
+ wait(0.2)
+local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local clickPosition = mouse.Hit.Position
+
+local args = {
+    [1] = CFrame.new(clickPosition),
+    [2] = 1000000
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Mini Uzumaki").FireServer.RemoteEvent:FireServer(unpack(args))
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Kill all with mini utzumaki(OP)",
+ Callback = function()
+ 
+ local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Mini Uzumaki" then
+       v.Parent = LP.Character
+   end
+end
+ 
+        local players = game:GetService("Players"):GetPlayers()
+
+for _, player in ipairs(players) do
+    if player.Character then
+        local args = {
+            [1] = player.Character.HumanoidRootPart.CFrame,
+            [2] = 1000000
+        }
+
+        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Mini Uzumaki").FireServer.RemoteEvent:FireServer(unpack(args))
+    end
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful maximum utzumaki",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Maximum Uzumaki").Move1.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Real maximum utzumaki",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Supreme Art: Maximum Uzumaki").Move1.Event:FireServer()
+end
+   end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "More",
 	Icon = "rbxassetid://4483345998",
@@ -288,7 +457,7 @@ sgui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
 Tab:AddDropdown({
 	Name = "Input Character",
 	Default = "1",
-	Options = {"Gojo", "Sukuma", "Toji", "Saitama", "Luffy"},
+	Options = {"Gojo", "Sukuma", "Toji", "Saitama", "Luffy", "Hakari", "Sakuya", "Kenjaku"},
 	Callback = function(Value)
 		if Value == "Gojo" then
 		local args = {
@@ -325,6 +494,27 @@ game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(ar
 
 game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
 		end
+if Value == "Hakari" then
+local args = {
+    [1] = "Hakari"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+end
+if Value == "Sakuya" then
+local args = {
+    [1] = "Sakuya"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+end
+if Value == "Kenjaku" then
+local args = {
+    [1] = "Kenjaku"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+end
 	end    
 })
 
@@ -344,4 +534,28 @@ game:GetService("ReplicatedStorage"):WaitForChild("Transformation"):FireServer(u
 end
 		end
 	end    
+})
+
+Tab:AddButton({
+ Name = "Anti Void",
+ Callback = function()
+        local part = Instance.new("Part")
+part.Name = "AntiFallPart"
+part.Size = Vector3.new(50000, 5, 50000)
+part.Transparency = 1
+part.Anchored = true
+part.Position = Vector3.new(8, -47, -92)
+part.Parent = game.Workspace
+   end    
+})
+
+Tab:AddButton({
+ Name = "Anti jump block",
+ Callback = function()
+        while true do
+          wait()
+          local Humanoid = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+      Humanoid:ChangeState(Enum.HumanoidStateType.Jumping,true)
+        end
+   end    
 })
