@@ -432,9 +432,19 @@ Tab:AddToggle({
 	Callback = function(Value)
 	EEr = Value
 		while EEr do
-		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
-		wait()
-		end
+  wait()
+local Player = game.Players.LocalPlayer
+local Character = Player.Character or Player.CharacterAdded:Wait()
+
+local initialSpeed = 16
+local currentSpeed = Character.Humanoid.WalkSpeed
+
+if currentSpeed >= 0 and currentSpeed <= 10 then
+    Character.Humanoid.WalkSpeed = initialSpeed
+else
+    Character.Humanoid.WalkSpeed = currentSpeed
+end
+ end
 	end    
 })
 
@@ -553,9 +563,18 @@ Tab:AddButton({
  Name = "Anti jump block",
  Callback = function()
         while true do
-          wait()
-          local Humanoid = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-      Humanoid:ChangeState(Enum.HumanoidStateType.Jumping,true)
-        end
+  wait()
+local Player = game.Players.LocalPlayer
+local Character = Player.Character or Player.CharacterAdded:Wait()
+
+local initialJump = 50
+local currentJump = Character.Humanoid.JumpPower
+
+if currentJump >= 0 and currentJump <= 10 then
+    Character.Humanoid.JumpPower = initialJump
+else
+    Character.Humanoid.JumpPower = currentJump
+end
+ end
    end    
 })
