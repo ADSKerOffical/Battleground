@@ -589,12 +589,8 @@ Tab:AddToggle({
 	God = Value
 		while God do
 		wait(0.1)
-		if game:GetService("Players").LocalPlayer.Character.Humanoid.Health < 30 then
-		local args = {
-    [1] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Transformation"):FireServer(unpack(args))
+		if game:GetService("Players").LocalPlayer.Character.Humanoid.Health =< 100 then
+	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("KingofCurses"):FireServer()
 end
 		end
 	end    
