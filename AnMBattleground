@@ -407,6 +407,53 @@ end
    end    
 })
 
+local Section = Tab:AddSection({
+	Name = "Ichigo lorde"
+})
+
+Tab:AddButton({
+ Name = "Cry from the heart",
+ Callback = function()
+        local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Scream" then
+       v.Parent = LP.Character
+   end
+end
+ for i = 1, 20 do
+game:GetService("Players").LocalPlayer.Character.Scream.LocalScript.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Incinerate",
+ Callback = function()
+        local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Cero" then
+       v.Parent = LP.Character
+   end
+end
+   for i = 1, 10 do
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.Cero.LocalScript.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Safety precautions",
+ Callback = function()
+for i = 1, 100 do
+ wait(0.1)
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Vanish"):FireServer()
+end
+   end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "More",
 	Icon = "rbxassetid://4483345998",
@@ -467,7 +514,7 @@ sgui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
 Tab:AddDropdown({
 	Name = "Input Character",
 	Default = "1",
-	Options = {"Gojo", "Sukuma", "Toji", "Saitama", "Luffy", "Hakari", "Sakuya", "Kenjaku"},
+	Options = {"Gojo", "Sukuma", "Toji", "Saitama", "Luffy", "Hakari", "Sakuya", "Kenjaku", "Ichigo"},
 	Callback = function(Value)
 		if Value == "Gojo" then
 		local args = {
@@ -521,6 +568,13 @@ end
 if Value == "Kenjaku" then
 local args = {
     [1] = "Kenjaku"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+end
+if Value == "Ichigo" then
+local args = {
+    [1] = "Ichigo Vasto Lorde"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
