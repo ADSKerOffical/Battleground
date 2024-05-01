@@ -479,7 +479,7 @@ Tab:AddToggle({
 	Callback = function(Value)
 	EEr = Value
 		while EEr do
-  wait()
+  wait(0.3)
 local Player = game.Players.LocalPlayer
 local Character = Player.Character or Player.CharacterAdded:Wait()
 
@@ -506,7 +506,7 @@ StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
 
 local sgui = game:GetService("StarterGui")
 sgui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
-		wait()
+		wait(0.3)
 		end
 	end    
 })
@@ -588,7 +588,7 @@ Tab:AddToggle({
 	Callback = function(Value)
 	God = Value
 		while God do
-		wait(0.1)
+		wait(0.2)
 		if game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 100 or game:GetService("Players").LocalPlayer.Character.Humanoid.Health < 100 then
 	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("KingofCurses"):FireServer()
 end
@@ -613,7 +613,7 @@ Tab:AddButton({
  Name = "Anti jump block",
  Callback = function()
         while true do
-  wait()
+  wait(0.3)
 local Player = game.Players.LocalPlayer
 local Character = Player.Character or Player.CharacterAdded:Wait()
 
