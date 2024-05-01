@@ -628,3 +628,105 @@ end
  end
    end    
 })
+
+local Tab = Window:MakeTab({
+	Name = "Extra",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+ Name = "Rage mode (Don't press too many times)",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("MalevolentShrine"):FireServer()
+end
+wait()
+local args = {
+    [1] = "Kenjaku"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+wait(7)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Mini Uzumaki" then
+       v.Parent = LP.Character
+   end
+end
+ 
+for i = 1, 50 do
+wait(0.5)
+        local players = game:GetService("Players"):GetPlayers()
+
+for _, player in ipairs(players) do
+    if player.Character then
+        local args = {
+            [1] = player.Character.HumanoidRootPart.CFrame,
+            [2] = 1000000
+        }
+
+        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Mini Uzumaki").FireServer.RemoteEvent:FireServer(unpack(args))
+    end
+end
+   end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Killer mode",
+ Callback = function()
+        local args = {
+    [1] = "Gyutaro"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+
+local function onTouch()
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Rampant Rampage" then
+       v.Parent = LP.Character
+   end
+end
+    for i = 1, 1 do
+        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rampant Rampage").Punch.Event:FireServer()
+    end
+ wait(2.5)
+ local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Rampant Arc" then
+       v.Parent = LP.Backpack
+   end
+end
+end
+
+local function stopScript()
+    game:GetService("UserInputService").TouchEnded:Disconnect(onTouch)
+end
+
+local function startScript()
+    game:GetService("UserInputService").TouchEnded:Connect(onTouch)
+end
+
+repeat wait() until game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+    startScript()
+end)
+
+if game.Players.LocalPlayer.Character then
+    startScript()
+else
+    stopScript()
+end
+
+repeat
+  wait(0.3)
+  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower  = 75
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+   end    
+})
