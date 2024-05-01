@@ -821,3 +821,56 @@ toolFour()
 toolFive()
      end
 })
+
+Tab:AddButton({
+ Name = "Gojo abilities pack",
+ Callback = function()
+local function toolOnea()
+local tool = Instance.new("Tool")
+tool.Name = "Red"
+tool.RequiresHandle = false
+
+tool.Activated:Connect(function()
+for i = 1, 5 do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Red"):FireServer()
+end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+end
+
+local function toolTwoa()
+local tool = Instance.new("Tool")
+tool.Name = "Blue"
+tool.RequiresHandle = false
+
+tool.Activated:Connect(function()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Blue"):FireServer()
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+end
+
+local function toolThreea()
+local tool = Instance.new("Tool")
+tool.Name = "Nuclear bomb"
+tool.RequiresHandle = false
+
+tool.Activated:Connect(function()
+ for i = 1, 10 do
+ local args = {
+    [1] = "FinalHollowPurple"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Abilitys"):WaitForChild("Gojo"):FireServer(unpack(args))
+ end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+end
+
+toolOnea()
+toolTwoa()
+toolThreea()
+     end
+})
