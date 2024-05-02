@@ -874,3 +874,119 @@ toolTwoa()
 toolThreea()
      end
 })
+
+Tab:AddButton({
+ Name = "Serious mode",
+ Callback = function()
+local function SeriousMode()
+local args = {
+    [1] = "Shadow"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+
+wait(0.2)
+
+local targetToolName = "Overdrive"
+
+local player = game.Players.LocalPlayer
+local function equipTool()
+    local backpack = player.Backpack
+    local character = player.Character
+
+    local targetTool = backpack:FindFirstChild(targetToolName)
+    if targetTool then
+        targetTool.Parent = character
+    end
+end
+
+equipTool()
+
+game:GetService("Players").LocalPlayer.Character.Overdrive:FindFirstChild("Full Cowl").Event:FireServer()
+
+wait(0.3)
+
+local Player = game:GetService("Players").LocalPlayer
+local Backpack = Player.Backpack
+local Character = Player.Character
+for _,v in pairs(Backpack:GetChildren()) do
+   if v:IsA("Tool") or v:IsA("HopperBin") then
+       v:Destroy()
+   end
+end
+for _,v in pairs(Character:GetChildren()) do
+   if v:IsA("Tool") or v:IsA("HopperBin") then
+       v:Destroy()
+   end 
+end
+end
+
+SeriousMode()
+
+local args = {
+    [1] = "Garou"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+local function onTouch()
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Crushed Rock" then
+       v.Parent = LP.Character
+   end
+end
+    for i = 1, 5 do
+       game:GetService("Players").LocalPlayer.Character:FindFirstChild("Crushed Rock").Punch.Event:FireServer()
+   end
+ wait(1)
+ local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Crushed Rock" then
+       v.Parent = LP.Backpack
+   end
+end
+end
+
+local function stopScript()
+    game:GetService("UserInputService").TouchEnded:Disconnect(onTouch)
+end
+
+local function startScript()
+    game:GetService("UserInputService").TouchEnded:Connect(onTouch)
+end
+
+repeat wait() until game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+    startScript()
+end)
+
+if game.Players.LocalPlayer.Character then
+    startScript()
+else
+    stopScript()
+end
+
+repeat
+  wait(0.3)
+  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 35
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower  = 75
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+
+local function MyWoundsAreHealed()
+repeat
+  wait(0.2)
+  if game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 150 or game:GetService("Players").LocalPlayer.Character.Humanoid.Health < 150 then
+  local args = {
+    [1] = "Garou"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+  end
+ until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+ end
+ 
+ MyWoundsAreHealed()
+  end
+})
