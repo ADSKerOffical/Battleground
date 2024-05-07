@@ -454,6 +454,30 @@ end
    end    
 })
 
+local Section = Tab:AddSection({
+	Name = "Ayanokoji (Half OP Character)"
+})
+
+Tab:AddLabel("The character sucks, but you can become immortal")
+Tab:AddLabel("But you won't be able to use the tools")
+
+Tab:AddButton({
+ Name = "Godmode",
+ Callback = function()
+repeat
+   wait()
+   local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Dodge" then
+       v.Parent = LP.Character
+   end
+end
+game:GetService("Players").LocalPlayer.Character.Dodge.Skill.Event:FireServer()
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+ end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "More",
 	Icon = "rbxassetid://4483345998",
@@ -514,7 +538,7 @@ sgui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
 Tab:AddDropdown({
 	Name = "Input Character",
 	Default = "1",
-	Options = {"Gojo", "Sukuma", "Toji", "Saitama", "Luffy", "Hakari", "Sakuya", "Kenjaku", "Ichigo"},
+	Options = {"Gojo", "Sukuma", "Toji", "Saitama", "Luffy", "Hakari", "Sakuya", "Kenjaku", "Ichigo", "Ayanojoki"},
 	Callback = function(Value)
 		if Value == "Gojo" then
 		local args = {
@@ -575,6 +599,13 @@ end
 if Value == "Ichigo" then
 local args = {
     [1] = "Ichigo Vasto Lorde"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+end
+if Value == "Ayanojoki" then
+local args = {
+    [1] = "Ayanokoji"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
