@@ -1285,6 +1285,98 @@ SeriousMode()
 })
 
 Tab:AddButton({
+ Name = "Aura v2",
+ Callback = function()
+        local function SeriousMode()
+local args = {
+    [1] = "Shadow"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+
+wait(0.2)
+
+local targetToolName = "Overdrive"
+
+local player = game.Players.LocalPlayer
+local function equipTool()
+    local backpack = player.Backpack
+    local character = player.Character
+
+    local targetTool = backpack:FindFirstChild(targetToolName)
+    if targetTool then
+        targetTool.Parent = character
+    end
+end
+
+equipTool()
+
+game:GetService("Players").LocalPlayer.Character.Overdrive:FindFirstChild("Full Cowl").Event:FireServer()
+
+wait(0.3)
+
+local Player = game:GetService("Players").LocalPlayer
+local Backpack = Player.Backpack
+local Character = Player.Character
+for _,v in pairs(Backpack:GetChildren()) do
+   if v:IsA("Tool") or v:IsA("HopperBin") then
+       v:Destroy()
+   end
+end
+for _,v in pairs(Character:GetChildren()) do
+   if v:IsA("Tool") or v:IsA("HopperBin") then
+       v:Destroy()
+   end 
+end
+end
+
+wait(0.5)
+local function AuraZ()
+local args = {
+    [1] = "Ayanokoji"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+wait(0.2)
+local targetToolName = "Serious"
+
+local player = game.Players.LocalPlayer
+local function equipTool()
+    local backpack = player.Backpack
+    local character = player.Character
+
+    local targetTool = backpack:FindFirstChild(targetToolName)
+    if targetTool then
+        targetTool.Parent = character
+    end
+end
+
+equipTool()
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.Serious:FindFirstChild("Full Cowl").Event:FireServer()
+
+wait(0.3)
+local Player = game:GetService("Players").LocalPlayer
+local Backpack = Player.Backpack
+local Character = Player.Character
+for _,v in pairs(Backpack:GetChildren()) do
+   if v:IsA("Tool") or v:IsA("HopperBin") then
+       v:Destroy()
+   end
+end
+for _,v in pairs(Character:GetChildren()) do
+   if v:IsA("Tool") or v:IsA("HopperBin") then
+       v:Destroy()
+   end 
+end
+end
+
+AuraZ()
+SeriousMode()
+   end    
+})
+
+Tab:AddButton({
  Name = "Flash",
  Callback = function()
 local args = {
@@ -1305,5 +1397,254 @@ Tab:AddButton({
  Name = "Server breaker(V)",
  Callback = function()
         loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\65\68\83\75\101\114\79\102\102\105\99\97\108\47\86\105\112\49\47\109\97\105\110\47\65\110\77\34\41\41\40\41\10")()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Super Rage Mode",
+ Callback = function()
+        local function SeriousMode()
+local args = {
+    [1] = "Shadow"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+
+wait(0.2)
+
+local targetToolName = "Overdrive"
+
+local player = game.Players.LocalPlayer
+local function equipTool()
+    local backpack = player.Backpack
+    local character = player.Character
+
+    local targetTool = backpack:FindFirstChild(targetToolName)
+    if targetTool then
+        targetTool.Parent = character
+    end
+end
+
+equipTool()
+
+game:GetService("Players").LocalPlayer.Character.Overdrive:FindFirstChild("Full Cowl").Event:FireServer()
+
+wait(0.3)
+
+local Player = game:GetService("Players").LocalPlayer
+local Backpack = Player.Backpack
+local Character = Player.Character
+for _,v in pairs(Backpack:GetChildren()) do
+   if v:IsA("Tool") or v:IsA("HopperBin") then
+       v:Destroy()
+   end
+end
+for _,v in pairs(Character:GetChildren()) do
+   if v:IsA("Tool") or v:IsA("HopperBin") then
+       v:Destroy()
+   end 
+end
+end
+
+wait(0.5)
+local function AuraZ()
+local args = {
+    [1] = "Ayanokoji"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+wait(0.2)
+local targetToolName = "Serious"
+
+local player = game.Players.LocalPlayer
+local function equipTool()
+    local backpack = player.Backpack
+    local character = player.Character
+
+    local targetTool = backpack:FindFirstChild(targetToolName)
+    if targetTool then
+        targetTool.Parent = character
+    end
+end
+
+equipTool()
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.Serious:FindFirstChild("Full Cowl").Event:FireServer()
+
+wait(0.3)
+local Player = game:GetService("Players").LocalPlayer
+local Backpack = Player.Backpack
+local Character = Player.Character
+for _,v in pairs(Backpack:GetChildren()) do
+   if v:IsA("Tool") or v:IsA("HopperBin") then
+       v:Destroy()
+   end
+end
+for _,v in pairs(Character:GetChildren()) do
+   if v:IsA("Tool") or v:IsA("HopperBin") then
+       v:Destroy()
+   end 
+end
+end
+
+AuraZ()
+SeriousMode()
+
+local function toolOne()
+local tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Container Cataclysm"
+
+local isEnabled = false
+
+local function onActivated()
+    isEnabled = not isEnabled
+
+    if not isEnabled then return end
+while isEnabled and wait(0.2) do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ContainerKick"):FireServer()
+  end
+end
+
+tool.Activated:Connect(onActivated)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+end
+
+toolOne()
+
+local function toolTwo()
+local tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Crowd Buster"
+
+local isEnabled = false
+
+local function onActivated()
+    isEnabled = not isEnabled
+
+    if not isEnabled then return end
+while isEnabled and wait(0.3) do
+for i = 1, 10 do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Vanishing"):FireServer()
+end
+  end
+end
+
+tool.Activated:Connect(onActivated)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+end
+
+toolTwo()
+
+local function toolThree()
+local tool = Instance.new("Tool")
+tool.Name = "Bloodlust"
+tool.RequiresHandle = false
+
+tool.Activated:Connect(function()
+local count = 0
+last_pick_sin_mrazy = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame 
+for i = 1, 15 do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DomainSlashes"):FireServer()
+end
+repeat
+count = count + 1
+    local players = game.Players:GetPlayers()
+    local randomPlayer = players[math.random(1, #players)]
+    
+    if randomPlayer ~= game.Players.LocalPlayer then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = randomPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -2, 0)
+    end
+    
+    wait()
+until count == 60
+wait(0.2)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = last_pick_sin_mrazy
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+end
+
+toolThree()
+
+local function toolFour()
+local tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Strikes of the Gods"
+
+local isEnabled = false
+
+local function onActivated()
+    isEnabled = not isEnabled
+
+    if not isEnabled then return end
+while isEnabled and wait(0.) do
+for i = 1, 1 do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Punches"):FireServer()
+end
+  end
+end
+
+tool.Activated:Connect(onActivated)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+end
+
+toolFour()
+
+local function toolSeven()
+local tool = Instance.new("Tool")
+tool.Name = "Plasma"
+tool.RequiresHandle = false
+
+tool.Activated:Connect(function()
+for i = 1, 20 do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Blue"):FireServer()
+end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+end
+
+toolSeven()
+
+local function toolFive()
+local tool = Instance.new("Tool")
+tool.Name = "Big Bang"
+tool.RequiresHandle = false
+
+tool.Activated:Connect(function()
+for i = 1, 25 do
+ local args = {
+    [1] = "FinalHollowPurple"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Abilitys"):WaitForChild("Gojo"):FireServer(unpack(args))
+ end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+end
+
+toolFive()
+
+local function toolSix()
+local tool = Instance.new("Tool")
+tool.Name = "Domain of Death"
+tool.RequiresHandle = false
+
+tool.Activated:Connect(function()
+for i = 1, 5 do
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("MalevolentShrine"):FireServer()
+end
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+end
+
+toolSix()
    end    
 })
