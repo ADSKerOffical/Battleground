@@ -461,13 +461,13 @@ local Section = Tab:AddSection({
 Tab:AddLabel("The character sucks, but you can become immortal")
 Tab:AddLabel("But you won't be able to use the tools")
 
-local WsE = true
 Tab:AddDropdown({
 	Name = "Repeat abilities",
 	Default = "",
 	Options = {"Repeat Grap", "Repeat Head Beatdown", "Repeat Grap Slam", "Off all abilities"},
 	Callback = function(Value)
 		if Value == "Repeat Grap" then
+local WsE = true
 		local function toolOdin()
 repeat wait()
 if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Grab") then
@@ -479,6 +479,7 @@ end
 toolOdin()
 		end
 		if Value == "Repeat Head Beatdown" then
+local WsE = true
 		local function toolTri()
 repeat wait()
 if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Head Beatdown") then
@@ -490,6 +491,7 @@ end
 toolTri()
 		end
 		if Value == "Repeat Grap Slam" then
+local WsE = true
 		local function toolDva()
 repeat wait()
 if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Grab Slam") then
@@ -501,7 +503,7 @@ end
 toolDva()
 		end
 		if Value == "Off all abilities" then
-	WsE = not WsE
+	local WsE = false
 		end
 	end    
 })
