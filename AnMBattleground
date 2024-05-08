@@ -1521,6 +1521,52 @@ until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
 })
 
 Tab:AddButton({
+ Name = "Reaper",
+ Callback = function()
+local args = {
+    [1] = "Asta Demon"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/Reaper/main/Gui"))()
+   end
+})
+
+Tab:AddButton({
+ Name = "Electro",
+ Callback = function()
+ local args = {
+    [1] = "Green Hero"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/Electro/main/Gui"))()
+        repeat
+  wait(0.3)
+  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 35
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower  = 100
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+   end    
+})
+
+Tab:AddButton({
+ Name = "Cursed",
+ Callback = function()
+ local args = {
+    [1] = "Yuta"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/Cursed/main/Gui"))()
+        repeat
+  wait(0.3)
+  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 25
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower  = 65
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+   end    
+})
+
+Tab:AddButton({
  Name = "Server breaker(V)",
  Callback = function()
         loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\65\68\83\75\101\114\79\102\102\105\99\97\108\47\86\105\112\49\47\109\97\105\110\47\65\110\77\34\41\41\40\41\10")()
