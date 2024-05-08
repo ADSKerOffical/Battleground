@@ -461,6 +461,51 @@ local Section = Tab:AddSection({
 Tab:AddLabel("The character sucks, but you can become immortal")
 Tab:AddLabel("But you won't be able to use the tools")
 
+local WsE = true
+Tab:AddDropdown({
+	Name = "Repeat abilities",
+	Default = "",
+	Options = {"Repeat Grap", "Repeat Head Beatdown", "Repeat Grap Slam", "Off all abilities"},
+	Callback = function(Value)
+		if Value == "Repeat Grap" then
+		local function toolOdin()
+repeat wait()
+if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Grab") then
+    game:GetService("Players").LocalPlayer.Character.Grab.LocalScript.Event:FireServer()
+end
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 or WsE == false
+end
+
+toolOdin()
+		end
+		if Value == "Repeat Head Beatdown" then
+		local function toolTri()
+repeat wait()
+if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Head Beatdown") then
+    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Head Beatdown").LocalScript.Event:FireServer()
+end
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 or WsE == false
+end
+
+toolTri()
+		end
+		if Value == "Repeat Grap Slam" then
+		local function toolDva()
+repeat wait()
+if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Grab Slam") then
+    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Grab Slam").LocalScript.Event:FireServer()
+end
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 or WsE == false
+end
+
+toolDva()
+		end
+		if Value == "Off all abilities" then
+	WsE = not WsE
+		end
+	end    
+})
+
 Tab:AddButton({
  Name = "Godmode",
  Callback = function()
