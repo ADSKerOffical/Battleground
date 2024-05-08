@@ -478,6 +478,38 @@ until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
  end    
 })
 
+Tab:AddButton({
+ Name = "Godmode v2",
+ Callback = function()
+        local LP = game.Players.LocalPlayer
+
+local function EquipDodge()
+    repeat task.wait()
+        if not LP.Character then
+            continue
+        end
+        
+        for i,v in pairs(LP.Backpack:GetChildren()) do
+            if v.Name == "Dodge" then
+               v.Parent = LP.Character
+               game:GetService("Players").LocalPlayer.Character.Dodge.Skill.Event:FireServer()
+for i, v in pairs(LP.Character:GetChildren()) do
+        if v:IsA("Tool") then
+            v:Activate()
+        end
+    end
+               break
+            end
+        end
+    until LP.Character and game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+end
+
+repeat task.wait()
+    EquipDodge()
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+   end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "More",
 	Icon = "rbxassetid://4483345998",
