@@ -753,6 +753,26 @@ local char = plr.Character
    end    
 })
 
+Tab:AddButton({
+ Name = "Kill all NPCs",
+ Callback = function()
+        sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
+sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
+for i, d in pairs(game.Workspace:GetDescendants()) do
+    if d.ClassName == 'Humanoid' and not game.Players:FindFirstChild(d.Parent.Name) then
+        d.Health = 0
+    end
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Replication Abilities",
+ Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/ReplicationAbilityes/main/Gui"))()
+   end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Extra",
 	Icon = "rbxassetid://4483345998",
