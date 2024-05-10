@@ -51,6 +51,13 @@ Tab:AddButton({
       end    
 })
 
+Tab:AddButton({
+ Name = "Purple",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Purple"):FireServer()
+   end    
+})
+
 local Section = Tab:AddSection({
 	Name = "Sukuma"
 })
