@@ -511,6 +511,11 @@ toolDva()
 Tab:AddButton({
  Name = "Godmode",
  Callback = function()
+local args = {
+    [1] = "Ayanokoji"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
 repeat
    wait()
    local LP = game.Players.LocalPlayer
