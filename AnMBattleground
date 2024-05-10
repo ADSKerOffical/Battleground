@@ -516,6 +516,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+   wait(0.3)
 repeat
    wait()
    local LP = game.Players.LocalPlayer
