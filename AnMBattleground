@@ -611,13 +611,14 @@ until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
 Tab:AddButton({
 	Name = "Anti inventory lock",
 	Callback = function()
-	repeat task.wait()
+      while true do
+ task.wait()
   local StarterGui = game:GetService("StarterGui")
 StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
 
 local sgui = game:GetService("StarterGui")
 sgui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
-until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == math.huge
+end
 	end    
 })
 
