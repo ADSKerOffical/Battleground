@@ -724,6 +724,14 @@ part.Transparency = 1
 part.Anchored = true
 part.Position = Vector3.new(8, -47, -92)
 part.Parent = game.Workspace
+
+local part = Instance.new("Part")
+part.Name = "AntiFallPart2"
+part.Size = Vector3.new(50000, 5, 50000)
+part.Transparency = 0.5
+part.Anchored = true
+part.Position = Vector3.new(8, -94, -92)
+part.Parent = game.Workspace
    end    
 })
 
