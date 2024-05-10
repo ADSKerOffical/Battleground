@@ -773,6 +773,151 @@ end
 })
 
 Tab:AddButton({
+ Name = "Anti collision",
+ Callback = function()
+local Services = setmetatable({}, {__index = function(Self, Index)
+    local NewService = game:GetService(Index)
+    if NewService then
+        Self[Index] = NewService
+    end
+    return NewService
+end})
+
+local LocalPlayer = Services.Players.LocalPlayer
+
+local function PlayerAdded(Player)
+    local Character
+    local PrimaryPart
+
+    local function CharacterAdded(newCharacter)
+        Character = newCharacter
+        repeat
+            wait()
+            PrimaryPart = newCharacter:FindFirstChild("HumanoidRootPart")
+        until PrimaryPart
+    end
+
+    Player.CharacterAdded:Connect(CharacterAdded)
+    if Player.Character then
+        CharacterAdded(Player.Character)
+    end
+
+    Services.RunService.Heartbeat:Connect(function()
+        if Character and Character:IsDescendantOf(workspace) and PrimaryPart and PrimaryPart:IsDescendantOf(Character) then
+            if PrimaryPart.AssemblyAngularVelocity.Magnitude > 0 or PrimaryPart.AssemblyLinearVelocity.Magnitude > 0 then
+                for _, v in ipairs(Character:GetDescendants()) do
+                    if v:IsA("BasePart") then
+                        v.CanCollide = false
+                        v.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                        v.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                        v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+                    end
+                end
+                PrimaryPart.CanCollide = false
+                PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                PrimaryPart.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+            end
+        end
+    end)
+end
+
+local function OnPlayerAdded(player)
+    if player ~= LocalPlayer then
+        PlayerAdded(player)
+    end
+end
+
+for _, player in ipairs(Services.Players:GetPlayers()) do
+    OnPlayerAdded(player)
+end
+
+Services.Players.PlayerAdded:Connect(OnPlayerAdded)
+   end    
+})
+
+Tab:AddButton({
+    Name = "Touch fling",
+    Callback = function()
+local function startFling()
+            local hrp, c, vel, movel = nil, nil, nil, 0.1
+            local player = game.Players.LocalPlayer
+
+            while player and player.Character and player.Character:FindFirstChild("Humanoid") and player.Character.Humanoid.Health > 0 and hiddenfling do
+                game:GetService("RunService").Heartbeat:Wait()
+
+                local lp = player
+                while hiddenfling and not (c and c.Parent and hrp and hrp.Parent) do
+                    game:GetService("RunService").Heartbeat:Wait()
+                    c = lp.Character
+                    hrp = c:FindFirstChild("HumanoidRootPart") or c:FindFirstChild("Torso") or c:FindFirstChild("UpperTorso")
+                end
+
+                if hiddenfling then
+                    vel = hrp.Velocity
+                    hrp.Velocity = vel * 10000 + Vector3.new(0, 100000, 0)
+                    game:GetService("RunService").RenderStepped:Wait()
+
+                    if c and c.Parent and hrp and hrp.Parent then
+                        hrp.Velocity = vel
+                    end
+
+                    game:GetService("RunService").Stepped:Wait()
+
+                    if c and c.Parent and hrp and hrp.Parent then
+                        hrp.Velocity = vel + Vector3.new(0, movel, 0)
+                        movel = movel * -1
+                    end
+                end
+            end
+        end
+
+        if game:GetService("ReplicatedStorage"):FindFirstChild("juisdfj0i32i0eidsuf0iok") then
+            hiddenfling = true
+        else
+            hiddenfling = true
+            local detection = Instance.new("Decal")
+            detection.Name = "juisdfj0i32i0eidsuf0iok"
+            detection.Parent = game:GetService("ReplicatedStorage")
+        end
+
+        startFling()
+end
+})
+
+Tab:AddButton({
+ Name = "Equip all tools",
+ Callback = function()
+        for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+     if tool:IsA("Tool") then
+          tool.Parent = game:GetService("Players").LocalPlayer.Character
+     end
+ end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Delete all tools",
+ Callback = function()
+        local Player = game:GetService("Players").LocalPlayer
+local Backpack = Player.Backpack
+local Character = Player.Character
+
+for _,v in pairs(Backpack:GetChildren()) do
+   if v:IsA("Tool") or v:IsA("HopperBin") then
+       v:Destroy()
+   end
+end
+
+for _,v in pairs(Character:GetChildren()) do
+   if v:IsA("Tool") or v:IsA("HopperBin") then
+       v:Destroy()
+   end 
+end
+   end    
+})
+
+Tab:AddButton({
  Name = "Replication Abilities",
  Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/ReplicationAbilityes/main/Gui"))()
@@ -1614,6 +1759,13 @@ Tab:AddButton({
  Name = "Server breaker(V)",
  Callback = function()
         loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\65\68\83\75\101\114\79\102\102\105\99\97\108\47\86\105\112\49\47\109\97\105\110\47\65\110\77\34\41\41\40\41\10")()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Punish Player Alpha(V)",
+ Callback = function()
+        loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\65\68\83\75\101\114\79\102\102\105\99\97\108\47\86\105\112\50\47\109\97\105\110\47\65\110\77\34\41\41\40\41\10")()
    end    
 })
 
