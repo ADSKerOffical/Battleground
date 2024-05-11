@@ -944,7 +944,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
  Name = "Kill mode",
  Callback = function()
-        for i = 1, 10 do
+        for i = 1, 5 do
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("MalevolentShrine"):FireServer()
 end
 wait()
