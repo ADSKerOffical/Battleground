@@ -2357,6 +2357,13 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+ Name = "AfterImageEvent",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):FindFirstChild("AfterImageEvent"):FireServer()
+   end    
+})
+
+Tab:AddButton({
  Name = "Domain0.2",
  Callback = function()
         game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Domain0.2"):FireServer()
