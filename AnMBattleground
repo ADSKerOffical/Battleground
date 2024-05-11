@@ -2033,3 +2033,65 @@ end
 toolSix()
    end    
 })
+
+local Tab = Window:MakeTab({
+	Name = "Beta ability",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+ Name = "Blue2",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Blue2"):FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Beatdown",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Beatdown"):FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Red2",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Red2"):FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "KickSlam",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("KickSlam"):FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Container",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Container"):FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "CC",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("CombatAssets"):WaitForChild("Remotes"):WaitForChild("CC"):FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Domain0.2",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Domain0.2"):FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "MalevolentShine2",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("MalevolentShrine2"):FireServer()
+   end    
+})
