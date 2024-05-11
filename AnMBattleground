@@ -2034,6 +2034,235 @@ toolSix()
    end    
 })
 
+Tab:AddButton({
+ Name = "Gojo Infinity Void",
+ Callback = function()
+        local player = game.Players.LocalPlayer
+
+local hasTool = false
+for _, tool in ipairs(player.Backpack:GetChildren()) do
+    if tool.Name == "Infinity Void" then
+        hasTool = true
+        break
+    end
+end
+
+if not hasTool then
+  local function F1()
+    local args = {
+    [1] = "Gojo"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+wait(0.5)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "One Six Eyes" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.1)
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("One Six Eyes").Script.Event:FireServer()
+  end
+  
+  local function F2()
+wait(6)
+  local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Infinity Void" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.3)
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Infinity Void").Skill.InfinityVoid:FireServer()
+  end
+  
+  F1()
+  F2()
+end
+
+if hasTool then
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Infinity Void" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.3)
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Infinity Void").Skill.InfinityVoid:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Gojo Unlimited Void",
+ Callback = function()
+        local player = game.Players.LocalPlayer
+
+local hasTool = false
+for _, tool in ipairs(player.Backpack:GetChildren()) do
+    if tool.Name == "Six Eyes" then
+        hasTool = true
+        break
+    end
+end
+
+if not hasTool then
+  local function F1()
+    local args = {
+    [1] = "Gojo"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+wait(0.5)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "One Six Eyes" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.1)
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("One Six Eyes").Script.Event:FireServer()
+  end
+  
+  local function F2()
+wait(6)
+  local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Unlimited Void 0,2s" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.1)
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Unlimited Void 0,2s").Domain.Event:FireServer()
+  end
+  
+  F1()
+  F2()
+end
+
+if hasTool then
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Unlimited Void 0,2s" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.1)
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Unlimited Void 0,2s").Domain.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Rengoku Fire Dragon",
+ Callback = function()
+        local player = game.Players.LocalPlayer
+
+local hasTool = false
+for _, tool in ipairs(player.Backpack:GetChildren()) do
+    if tool.Name == "Rengoku" then
+        hasTool = true
+        break
+    end
+end
+
+if not hasTool then
+  local function F1()
+    local args = {
+    [1] = "Rengoku"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+wait(0.5)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Rengoku" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.1)
+game:GetService("Players").LocalPlayer.Character.Rengoku.Ground.Event:FireServer()
+  end
+
+if hasTool then
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Rengoku" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.1)
+game:GetService("Players").LocalPlayer.Character.Rengoku.Ground.Event:FireServer()
+end
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Zenitsu Sixfold",
+ Callback = function()
+        local player = game.Players.LocalPlayer
+
+local hasTool = false
+for _, tool in ipairs(player.Backpack:GetChildren()) do
+    if tool.Name == "Sixfold" then
+        hasTool = true
+        break
+    end
+end
+
+if not hasTool then
+  local args = {
+    [1] = "Zenitsu"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+wait(0.5)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Sixfold" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.1)
+for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Character.Sixfold.Sixfold.Fire:FireServer()
+end
+  end
+
+if hasTool then
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Sixfold" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.1)
+for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Character.Sixfold.Sixfold.Fire:FireServer()
+end
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Denji Transformation",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Chainsaw_Man_RS_Folder"):WaitForChild("Remotes"):WaitForChild("Transform_RE"):FireServer()
+   end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Beta ability",
 	Icon = "rbxassetid://4483345998",
