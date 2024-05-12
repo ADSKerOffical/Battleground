@@ -571,7 +571,7 @@ until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
 })
 
 local Tab = Window:MakeTab({
-	Name = "More",
+	Name = "Options",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -925,6 +925,22 @@ for _,v in pairs(Character:GetChildren()) do
        v:Destroy()
    end 
 end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Fix Camera",
+ Callback = function()
+        speaker = game.Players.LocalPlayer
+workspace.CurrentCamera:remove()
+ task.wait()
+ repeat wait() until speaker.Character ~= nil
+ workspace.CurrentCamera.CameraSubject = speaker.Character:FindFirstChildWhichIsA('Humanoid')
+ workspace.CurrentCamera.CameraType = "Custom"
+ speaker.CameraMinZoomDistance = 0.5
+ speaker.CameraMaxZoomDistance = 400
+ speaker.CameraMode = "Classic"
+ speaker.Character.Head.Anchored = false
    end    
 })
 
