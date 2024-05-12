@@ -2391,3 +2391,5 @@ local function Blacklist()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/Blacklist/main/AnM"))()
   end
 end
+
+Blacklist()
