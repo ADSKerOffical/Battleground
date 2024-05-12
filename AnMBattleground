@@ -2386,8 +2386,15 @@ Tab:AddDropdown({
 	end    
 })
 
+OrionLib:MakeNotification({
+ Name = "Budgie Hub",
+ Content = "Creator – MEGACOCONUT",
+ Image = "rbxassetid://4483345998",
+ Time = 5
+})
+
 local function Blacklist()
-  if game.Players.LocalPlayer.UserId = "1137392849" then
+  if game.Players.LocalPlayer.UserId == "1137392849" then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/Blacklist/main/AnM"))()
   end
 end
