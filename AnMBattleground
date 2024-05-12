@@ -945,6 +945,24 @@ workspace.CurrentCamera:remove()
 })
 
 Tab:AddButton({
+ Name = "Auto Defrost",
+ Callback = function()
+        while true do
+  wait()
+for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+   task.spawn(function()
+    for i, x in next, v.Character:GetDescendants() do
+     if x.Name ~= floatName and x:IsA("BasePart") and x.Anchored then
+      x.Anchored = false
+     end
+    end
+   end)
+end
+end
+   end    
+})
+
+Tab:AddButton({
  Name = "Replication Abilities",
  Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/ReplicationAbilityes/main/Gui"))()
