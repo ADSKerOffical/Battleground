@@ -771,6 +771,21 @@ local char = plr.Character
 })
 
 Tab:AddButton({
+ Name = "Anti reclining v2",
+ Callback = function()
+        while true do
+   task.wait()
+speaker = game.Players.LocalPlayer
+for i,v in pairs(speaker.Character:GetDescendants()) do
+  if v:IsA("BodyVelocity") or v:IsA("BodyGyro") or v:IsA("RocketPropulsion") or v:IsA("BodyThrust") or v:IsA("BodyAngularVelocity") or v:IsA("AngularVelocity") or v:IsA("BodyForce") or v:IsA("VectorForce") or v:IsA("LineForce") then
+   v:Destroy()
+  end
+ end
+end
+   end    
+})
+
+Tab:AddButton({
  Name = "Kill all NPCs",
  Callback = function()
         sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
