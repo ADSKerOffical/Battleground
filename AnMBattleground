@@ -2210,6 +2210,51 @@ end
 })
 
 Tab:AddButton({
+ Name = "All Range Atomic",
+ Callback = function()
+        local player = game.Players.LocalPlayer
+
+local hasTool = false
+for _, tool in ipairs(player.Backpack:GetChildren()) do
+    if tool.Name == "All Range Atomic" or tool.Name == "AtomicFolder" then
+        hasTool = true
+        break
+    end
+end
+
+if not hasTool then
+  local args = {
+    [1] = "Shadow"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+wait(0.5)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "All Range Atomic" or v.Name == "AtomicFolder" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.1)
+game:GetService("ReplicatedStorage"):WaitForChild("AtomicFolder"):WaitForChild("Event"):FireServer() 
+  end
+
+if hasTool then
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "All Range Atomic" or v.Name == "AtomicFolder" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.1)
+game:GetService("ReplicatedStorage"):WaitForChild("AtomicFolder"):WaitForChild("Event"):FireServer() 
+end
+   end    
+})
+
+Tab:AddButton({
  Name = "Rengoku Fire Dragon",
  Callback = function()
         local player = game.Players.LocalPlayer
