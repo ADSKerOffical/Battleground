@@ -2357,6 +2357,20 @@ Tab:AddButton({
    end    
 })
 
+Tab:AddButton({
+ Name = "Supernova",
+ Callback = function()
+        for i = 1, 500 do
+local args = {
+    [1] = false,
+    [2] = Vector3.new(math.random(-1e3, 1e3), 10, math.random(-1e3, 1e3))
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Kamehameha"):WaitForChild("Remotes"):WaitForChild("KamehamehaEvent"):FireServer(unpack(args))
+end
+   end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Beta ability",
 	Icon = "rbxassetid://4483345998",
@@ -2478,6 +2492,13 @@ Tab:AddDropdown({
 		end
 		end
 	end    
+})
+
+Tab:AddButton({
+ Name = "Beta Replication",
+ Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/BetaReplication/main/AnM"))()
+   end    
 })
 
 OrionLib:MakeNotification({
