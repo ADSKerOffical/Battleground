@@ -2463,6 +2463,118 @@ end
 })
 
 Tab:AddButton({
+ Name = "Yuta This Is Pure Love",
+ Callback = function()
+        local args = {
+    [1] = "Yuta"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+
+wait(0.4)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Rika" then
+       v.Parent = LP.Character
+   end
+end
+for i, v in pairs(LP.Character:GetChildren()) do
+        if v:IsA("Tool") and v.Name == "Rika" then
+            v:Activate()
+        end
+    end
+
+wait(0.5)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "This Is Pure Love" then
+       v.Parent = LP.Character
+   end
+end
+for i = 1, 200 do
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("This Is Pure Love").Script.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Rengoku Divine Rengoku",
+ Callback = function()
+        local args = {
+    [1] = "Rengoku"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+
+wait(0.4)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Rengoku" then
+       v.Parent = LP.Character
+   end
+end
+
+wait(0.5)
+for i = 1, 20 do
+game:GetService("Players").LocalPlayer.Character.Rengoku.Ground.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Akaza Compass Needle",
+ Callback = function()
+        local args = {
+    [1] = "Akaza"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+
+wait(0.4)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Compass Needle" then
+       v.Parent = LP.Character
+   end
+end
+
+wait(0.5)
+for i = 1, 5 do
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Compass Needle").Akaza.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Serious Punch",
+ Callback = function()
+        local args = {
+    [1] = "Saitama"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+
+wait(0.4)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Serious Punch" then
+       v.Parent = LP.Character
+   end
+end
+
+wait(1)
+for i = 1, 5 do
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Serious Punch").Punch.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
  Name = "Denji Transformation",
  Callback = function()
         game:GetService("ReplicatedStorage"):WaitForChild("Chainsaw_Man_RS_Folder"):WaitForChild("Remotes"):WaitForChild("Transform_RE"):FireServer()
