@@ -2575,6 +2575,142 @@ end
 })
 
 Tab:AddButton({
+ Name = "Sukuma Boxing Arena",
+ Callback = function()
+local player = game.Players.LocalPlayer
+
+local hasTool = false
+for _, tool in ipairs(player.Backpack:GetChildren()) do
+    if tool.Name == "Boxing Arena" or tool.Name == "Sukuna" then
+        hasTool = true
+        break
+    end
+end
+
+if not hasTool then
+  local args = {
+    [1] = "Yuji / Sukuna"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+wait(0.5)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Boxing Arena" or v.Name == "RingOfDeath" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.1)
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Boxing Arena").Skill.RingOfDeath:FireServer()
+  end
+
+if hasTool then
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Boxing Arena" or v.Name == "RingOfDeath" then
+       v.Parent = LP.Character
+   end
+end
+wait(0.1)
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Boxing Arena").Skill.RingOfDeath:FireServer()
+end
+  end
+})
+
+Tab:AddDropdown({
+	Name = "Guytaro",
+	Default = "1",
+	Options = {"Spam Rampant Arc", "Quick Spam Rampant Arc"},
+	Callback = function(Value)
+		if Value == "Spam Rampant Arc" then
+		local args = {
+    [1] = "Gyutaro"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+
+wait(0.5)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Rampant Arc" then
+       v.Parent = LP.Character
+   end
+end
+
+wait(0.3)
+repeat
+  wait(0.1)
+ if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rampant Arc") then
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rampant Arc").Keybind.Fire:FireServer()
+  end
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+		end
+		if Value == "Quick Spam Rampant Arc" then
+		local args = {
+    [1] = "Gyutaro"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+
+wait(0.5)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Rampant Arc" then
+       v.Parent = LP.Character
+   end
+end
+
+wait(0.3)
+repeat
+  task.wait()
+ if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rampant Arc") then
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rampant Arc").Keybind.Fire:FireServer()
+  end
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+		end
+	end    
+})
+
+Tab:AddButton({
+ Name = "Summon Mahoraga",
+ Callback = function()
+        local args = {
+    [1] = "Megumi / Sukuna"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+
+wait(0.3)
+local LP = game.Players.LocalPlayer
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "Summon Mahoraga" then
+       v.Parent = LP.Character
+   end
+end
+
+wait(0.4)
+repeat wait(0.3)
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+
+local targetPosition = mouse.Hit.Position
+ if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Summon Mahoraga") then
+local args = {
+    [1] = Vector3.new(targetPosition.X, targetPosition.Y, targetPosition.Z)
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Summon Mahoraga").Use.RemoteEvent:FireServer(unpack(args))
+  end
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+   end    
+})
+
+Tab:AddButton({
  Name = "Denji Transformation",
  Callback = function()
         game:GetService("ReplicatedStorage"):WaitForChild("Chainsaw_Man_RS_Folder"):WaitForChild("Remotes"):WaitForChild("Transform_RE"):FireServer()
