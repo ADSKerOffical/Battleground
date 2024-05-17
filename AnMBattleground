@@ -2662,9 +2662,9 @@ end
 })
 
 Tab:AddDropdown({
-	Name = "Guytaro",
+	Name = "Guytaro(OP)",
 	Default = "1",
-	Options = {"Input Gyutaro", "Spam Rampant Arc", "Quick Spam Rampant Arc"},
+	Options = {"Input Gyutaro", "Spam Rampant Arc", "Quick Spam Rampant Arc", "Off Spam"},
 	Callback = function(Value)
 if Value == "Input Gyutaro" then
 local args = {
@@ -2674,6 +2674,7 @@ local args = {
 game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
 end
 		if Value == "Spam Rampant Arc" then
+local CfD = true
 		local args = {
     [1] = "Gyutaro"
 }
@@ -2695,9 +2696,10 @@ repeat
  if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rampant Arc") then
 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rampant Arc").Keybind.Fire:FireServer()
   end
-until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 or CfD == false
 		end
 		if Value == "Quick Spam Rampant Arc" then
+local CfD = true
 		local args = {
     [1] = "Gyutaro"
 }
@@ -2715,12 +2717,15 @@ end
 
 wait(0.3)
 repeat
-  task.wait()
+  game:GetService("RunService").RenderStepped:Wait()
  if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rampant Arc") then
 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rampant Arc").Keybind.Fire:FireServer()
   end
-until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 or CfD == false
 		end
+if Value == "Off Spam" then
+local CfD = false
+end
 	end    
 })
 
