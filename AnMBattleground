@@ -63,21 +63,46 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddButton({
-	Name = "Powerful Slash",
-	Callback = function()
-      		for i = 1, 10 do
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Black Flash").LocalScript.Slash1:FireServer()
+ Name = "Powerful Cursed Barrage",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Cursed Barrage"].LocalScript.Event:FireServer()
 end
-  	end    
+   end    
 })
 
 Tab:AddButton({
-	Name = "Powerful Slaughter Demon",
-	Callback = function()
-      		for i = 1, 10 do
-      game:GetService("Players").LocalPlayer.Character:FindFirstChild("Slaughter Demon").LocalScript.Event:FireServer()
-      end
-  	end   
+ Name = "Powerful Black Slash",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Black Flash"].BlackFlash.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Slaughter Demon",
+ Callback = function()
+        for i = 1, 25 do
+game:GetService("Players").LocalPlayer.Backpack["Slaughter Demon"].LocalScript.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Kick Manji",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Manji Kick"].Kick.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Boxing Arena",
+ Callback = function()
+        game:GetService("Players").LocalPlayer.Backpack["Boxing Arena"].Skill.RingOfDeath:FireServer()
+   end    
 })
 
 Tab:AddButton({
@@ -90,6 +115,24 @@ Tab:AddButton({
 Tab:AddLabel("Ult version")
 
 Tab:AddButton({
+ Name = "Powerful Cleave",
+ Callback = function()
+        for i = 1, 20 do
+game:GetService("Players").LocalPlayer.Backpack.Cleave.LocalScript.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Dismantle",
+ Callback = function()
+        for i = 1, 50 do
+game:GetService("Players").LocalPlayer.Backpack.Dismantle.LocalScript.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
  Name = "Multi Fire",
  Callback = function()
         game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Remtoes"):WaitForChild("Fire"):FireServer()
@@ -99,14 +142,7 @@ Tab:AddButton({
 Tab:AddButton({
  Name = "Multi regen",
  Callback = function()
- local LP = game.Players.LocalPlayer
-repeat wait() until LP.Character
-for i,v in pairs(LP.Backpack:GetChildren()) do
-   if v.Name == "Reverse Cursed Technique" then
-       v.Parent = LP.Character
-   end
-end
-        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Reverse Cursed Technique").Script.Event:FireServer()
+ game:GetService("Players").LocalPlayer.Backpack["Reversed Cursed Technique"].Script.Event:FireServer()
    end    
 })
 
