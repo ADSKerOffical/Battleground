@@ -13,42 +13,55 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddButton({
-	Name = "Powerful red",
-	Callback = function()
-	local LP = game.Players.LocalPlayer
-repeat wait() until LP.Character
-for i,v in pairs(LP.Backpack:GetChildren()) do
-   if v.Name == "Red" then
-       v.Parent = LP.Character
-   end
+ Name = "Super Red",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("ReplicatedStorage").Remotes.Red:FireServer()
 end
-      		for i = 1, 10 do
-game:GetService("Players").LocalPlayer.Character.Red.aka.Event:FireServer()
-end
-  	end    
+   end    
 })
 
 Tab:AddButton({
-	Name = "Spam Pull",
-	Callback = function()
-	local LP = game.Players.LocalPlayer
-repeat wait() until LP.Character
-for i,v in pairs(LP.Backpack:GetChildren()) do
-   if v.Name == "Technique Pull" then
-       v.Parent = LP.Character
-   end
+ Name = "Technique Pull",
+ Callback = function()
+        game:GetService("Players").LocalPlayer.Backpack["Technique Pull"].ao.Event:FireServer()
+   end    
+})
+Tab:AddButton({
+ Name = "Spam Lapse Blue",
+ Callback = function()
+        for i = 1, 20 do
+wait()
+game:GetService("Players").LocalPlayer.Backpack["Lapse Blue"].Move1.Event:FireServer()
 end
-      		while wait(0.2) do
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Technique Pull").ao.Event:FireServer()
+   end    
+})
+
+Tab:AddLabel("Gear 2")
+
+Tab:AddButton({
+ Name = "Maximum Red",
+ Callback = function()
+        for i = 1, 5 do
+game:GetService("Players").LocalPlayer.Backpack["Maximum Reversal Red"].Red.Event:FireServer()
 end
-  	end
+   end    
 })
 
 Tab:AddButton({
-	Name = "Transformation",
-	Callback = function()
-      	  game:GetService("Players").LocalPlayer.Character:FindFirstChild("The Honored One").Script.Event:FireServer()
-      end    
+ Name = "Ultimate Red",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack.Red.Script.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Maximum Blue",
+ Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.Blue:FireServer()
+   end    
 })
 
 Tab:AddButton({
@@ -57,6 +70,55 @@ Tab:AddButton({
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Purple"):FireServer()
    end    
 })
+
+Tab:AddButton({
+ Name = "Unlimited Void 0,2",
+ Callback = function()
+        game:GetService("Players").LocalPlayer.Backpack["Unlimited Void 0,2s"].Domain.Event:FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Infinity Void",
+ Callback = function()
+        game:GetService("Players").LocalPlayer.Backpack["Infinity Void"].Skill.InfinityVoid:FireServer()
+   end    
+})
+
+Tab:AddLabel("Gear 3")
+
+Tab:AddButton({
+ Name = "Powerful Black Flash",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Black Flash"].BlackFlash.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Unlimited Void",
+ Callback = function()
+game:GetService("Players").LocalPlayer.Backpack["Unlimited Void"].Skill.InfinityVoid:FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "200% Purple",
+ Callback = function()
+        game:GetService("Players").LocalPlayer.Backpack["Maximum Hollow Purple"].Skill.Event:FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Nuke Purple",
+ Callback = function()
+        local ohString1 = "FinalHollowPurple"
+
+game:GetService("ReplicatedStorage").Events.Abilitys.Gojo:FireServer(ohString1)
+   end    
+})
+
 
 local Section = Tab:AddSection({
 	Name = "Sukuma"
@@ -665,7 +727,7 @@ Tab:AddDropdown({
 	Callback = function(Value)
 		if Value == "Gojo" then
 		local args = {
-    [1] = "Gojo Young"
+    [1] = "Gojo"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
