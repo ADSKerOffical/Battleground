@@ -697,6 +697,46 @@ until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
    end    
 })
 
+local Section = Tab:AddSection({
+	Name = "Manjiro"
+})
+
+Tab:AddButton({
+	Name = "Powerful Under kick",
+	Callback = function()
+      		for i = 1, 30 do
+game:GetService("Players").LocalPlayer.Backpack["Under Kick"].LocalScript.Event:FireServer()
+end
+  	end    
+})
+
+Tab:AddButton({
+ Name = "Powerful KickSlam",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("ReplicatedStorage").Remotes.KickSlam:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Strongest Strike",
+ Callback = function()
+        for i = 1, 15 do
+game:GetService("Players").LocalPlayer.Backpack["Strongest Kick"].BlackFlash.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Serious Aura",
+ Callback = function()
+        for i = 1, 15 do
+game:GetService("Players").LocalPlayer.Backpack["Dark Impulse"]["Full Cowl"].Event:FireServer()
+end
+   end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Options",
 	Icon = "rbxassetid://4483345998",
@@ -752,7 +792,7 @@ end
 Tab:AddDropdown({
 	Name = "Input Character",
 	Default = "1",
-	Options = {"Gojo", "Sukuma", "Toji", "Saitama", "Luffy", "Hakari", "Sakuya", "Kenjaku", "Ichigo", "Ayanojoki"},
+	Options = {"Gojo", "Sukuma", "Toji", "Saitama", "Luffy", "Hakari", "Sakuya", "Kenjaku", "Ichigo", "Ayanojoki", "Manjiro"},
 	Callback = function(Value)
 		if Value == "Gojo" then
 		local args = {
@@ -823,6 +863,11 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+end
+if Value == "Manjiro" then
+local ohString1 = "Manjiro"
+
+game:GetService("ReplicatedStorage").Picked:FireServer(ohString1)
 end
 	end    
 })
@@ -2703,7 +2748,7 @@ end
 })
 
 local Tab = Window:MakeTab({
-	Name = "Beta ability",
+	Name = "Dev ability's",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -2823,6 +2868,20 @@ Tab:AddDropdown({
 		end
 		end
 	end    
+})
+
+Tab:AddDropdown({
+	Name = "Denji Move",
+	Default = "1",
+	Options = {"Transform_RE", "M1_RS_Folder"},
+	Callback = function(Value)
+if Value == "Transform_RE" then
+game:GetService("ReplicatedStorage").Chainsaw_Man_RS_Folder.Remotes.Transform_RE:FireServer()
+end
+if Value == "M1_RS_Folder" then
+game:GetService("ReplicatedStorage").Chainsaw_Man_RS_Folder.Remotes.M1_RE:FireServer()
+end
+      end
 })
 
 Tab:AddButton({
