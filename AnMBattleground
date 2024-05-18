@@ -37,6 +37,13 @@ end
    end    
 })
 
+Tab:AddButton({
+ Name = "One Six Eyes",
+ Callback = function()
+        game:GetService("Players").LocalPlayer.Backpack["One Six Eyes"].Script.Event:FireServer()
+   end    
+})
+
 Tab:AddLabel("Gear 2")
 
 Tab:AddButton({
@@ -82,6 +89,13 @@ Tab:AddButton({
  Name = "Infinity Void",
  Callback = function()
         game:GetService("Players").LocalPlayer.Backpack["Infinity Void"].Skill.InfinityVoid:FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Six Eyes",
+ Callback = function()
+        game:GetService("Players").LocalPlayer.Backpack["Six Eyes"].Script.Event:FireServer()
    end    
 })
 
@@ -220,51 +234,66 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddButton({
-	Name = "Machine gun",
-	Callback = function()
-	local LP = game.Players.LocalPlayer
-repeat wait() until LP.Character
-for i,v in pairs(LP.Backpack:GetChildren()) do
-   if v.Name == "Glock" then
-       v.Parent = LP.Character
-   end
+ Name = "Super Punches",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("ReplicatedStorage").Remotes.Punches:FireServer()
 end
-      		while task.wait() do
-game:GetService("Players").LocalPlayer.Character.Glock.LocalScript.Shot:FireServer()
-end
-  	end    
+   end    
 })
 
 Tab:AddButton({
-	Name = "Powerful Throat Slit",
-	Callback = function()
-	local LP = game.Players.LocalPlayer
-repeat wait() until LP.Character
-for i,v in pairs(LP.Backpack:GetChildren()) do
-   if v.Name == "Throat Slit" then
-       v.Parent = LP.Character
-   end
+ Name = "Powerful PlayfulCould",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("ReplicatedStorage").Remotes.PlayfulCloud:FireServer()
 end
-      		for i = 1, 15 do
-      game:GetService("Players").LocalPlayer.Character:FindFirstChild("Throat Slit").LocalScript.Event:FireServer()
-      end
-  	end    
+   end    
 })
 
 Tab:AddButton({
-	Name = "Mega ground strike",
-	Callback = function()
-	local LP = game.Players.LocalPlayer
-repeat wait() until LP.Character
-for i,v in pairs(LP.Backpack:GetChildren()) do
-   if v.Name == "Through out Earth" then
-       v.Parent = LP.Character
-   end
+ Name = "Incredible Vanishing",
+ Callback = function()
+        for i = 1, 20 do
+game:GetService("ReplicatedStorage").Remotes.Vanishing:FireServer()
 end
-      		for i = 1, 10 do
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Through out Earth").Script.Event:FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Activate Ult",
+ Callback = function()
+game:GetService("Players").LocalPlayer.Backpack["Inverted Spear Of Heaven"].Script.Event:FireServer()
+   end    
+})
+
+Tab:AddLabel("Ult version")
+
+Tab:AddButton({
+ Name = "Powerful Ground Strike",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Through out Earth"].Script.Event:FireServer()
 end
-  	end    
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Throat Slit",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Throat Slit"].LocalScript.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Little Hand",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Little Hand"].Combo.Event:FireServer()
+end
+   end    
 })
 
 local Section = Tab:AddSection({
