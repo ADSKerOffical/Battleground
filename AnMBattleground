@@ -301,70 +301,129 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddButton({
-	Name = "Real blow",
-	Callback = function()
-	local LP = game.Players.LocalPlayer
-repeat wait() until LP.Character
-for i,v in pairs(LP.Backpack:GetChildren()) do
-   if v.Name == "Serious Punch" then
-       v.Parent = LP.Character
-   end
+ Name = "Fast Powerful Blows",
+ Callback = function()
+        for i = 1, 10 do
+wait()
+game:GetService("Players").LocalPlayer.Backpack["Consecutive Normal Punches"].Punch.Event:FireServer()
 end
-      		for i = 1, 30 do
-      game:GetService("Players").LocalPlayer.Character:FindFirstChild("Serious Punch").Punch.Event:FireServer()
-      end
-  	end    
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Normal Punch",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Normal Punch"].Punch.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Mega Shove",
+ Callback = function()
+        for i = 1, 40 do
+game:GetService("Players").LocalPlayer.Backpack.Shove.Punch.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Really Serious Punch",
+ Callback = function()
+        for i = 1, 5 do
+game:GetService("Players").LocalPlayer.Backpack["Serious Punch"].Punch.Event:FireServer()
+end
+   end    
 })
 
 local Section = Tab:AddSection({
- Name = "Luffy"
+	Name = "Luffy"
 })
 
 Tab:AddButton({
- Name = "Powerful Pistol",
+ Name = "Long Punch",
  Callback = function()
- local LP = game.Players.LocalPlayer
-repeat wait() until LP.Character
-for i,v in pairs(LP.Backpack:GetChildren()) do
-   if v.Name == "Pistol" then
-       v.Parent = LP.Character
-   end
-end
-        for i = 1, 10 do
-game:GetService("Players").LocalPlayer.Character.Pistol.Move.Event:FireServer()
+        for i = 1, 25 do
+game:GetService("Players").LocalPlayer.Backpack.Pistol.Move.Event:FireServer()
 end
    end    
 })
 
 Tab:AddButton({
- Name = "Powerful Bazooka",
+ Name = "Double Punch",
  Callback = function()
- local LP = game.Players.LocalPlayer
-repeat wait() until LP.Character
-for i,v in pairs(LP.Backpack:GetChildren()) do
-   if v.Name == "Bazooka" then
-       v.Parent = LP.Character
-   end
-end
-        for i = 1, 10 do
-game:GetService("Players").LocalPlayer.Character.Bazooka.Move.Event:FireServer()
+        
+   end    
+})
+
+Tab:AddButton({
+ Name = "Leg Kick",
+ Callback = function()
+        for i = 1, 8 do
+game:GetService("Players").LocalPlayer.Backpack["Battle Axe"].Move.Event:FireServer()
 end
    end    
 })
 
 Tab:AddButton({
- Name = "Powerful Axe",
+ Name = "Consecutive Strikes",
  Callback = function()
- local LP = game.Players.LocalPlayer
-repeat wait() until LP.Character
-for i,v in pairs(LP.Backpack:GetChildren()) do
-   if v.Name == "Battle Axe" then
-       v.Parent = LP.Character
-   end
-end
         for i = 1, 10 do
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Battle Axe").Move.Event:FireServer()
+game:GetService("ReplicatedStorage").barrage.barrage:FireServer()
 end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Gear 2 Activate",
+ Callback = function()
+        game:GetService("Players").LocalPlayer.Backpack["Gear 2"].Script.Event:FireServer()
+   end    
+})
+
+Tab:AddLabel("Gear 2 Version")
+
+Tab:AddButton({
+ Name = "Powerful Long Punch",
+ Callback = function()
+        for i = 1, 30 do
+game:GetService("Players").LocalPlayer.Backpack.Jet.Move.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Double Punch",
+ Callback = function()
+        for i = 1, 30 do
+game:GetService("Players").LocalPlayer.Backpack["Jet Missile"].Move.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Leg Kick",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Battle Axe"].Move.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Consecutive Strikes",
+ Callback = function()
+        for i = 1, 5 do
+game:GetService("ReplicatedStorage").barrage.jetbarrage:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Gear 1 Activate",
+ Callback = function()
+        game:GetService("Players").LocalPlayer.Backpack["Gear 1"].Script.Event:FireServer()
    end    
 })
 
