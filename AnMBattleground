@@ -805,6 +805,13 @@ end
 })
 
 Tab:AddButton({
+ Name = "Shadow Rush",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Vanish"):FireServer()
+   end    
+})
+
+Tab:AddButton({
  Name = "Serious Aura",
  Callback = function()
         for i = 1, 15 do
