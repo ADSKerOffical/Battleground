@@ -526,9 +526,73 @@ end
 Tab:AddButton({
  Name = "Powerful wound sign",
  Callback = function()
-        for i = 1, 15 do
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Wound Sign").Script.Event:FireServer()
+        for i = 1, 30 do
+game:GetService("Players").LocalPlayer.Backpack["Wound Sign"].Script.Event:FireServer()
 end
+   end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Gyutaro"
+})
+
+Tab:AddButton({
+ Name = "Powerful Circular Slashes",
+ Callback = function()
+        for i = 1, 50 do
+game:GetService("Players").LocalPlayer.Backpack["Circual Slashes"].Punch.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Rampant Rampage",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Rampant Rampage"].Punch.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Projectile",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Rampant Arc"].Keybind.Fire:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Sequential Projectiles",
+ Callback = function()
+        for i = 1, 100 do
+wait()
+game:GetService("Players").LocalPlayer.Backpack["Rampant Arc"].Keybind.Fire:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Tool Spam Projectiles",
+ Callback = function()
+        repeat
+  game:GetService("RunService").RenderStepped:Wait()
+ if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rampant Arc") then
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rampant Arc").Keybind.Fire:FireServer()
+  end
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+   end    
+})
+
+Tab:AddButton({
+ Name = "Danger Murder",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Rampant Rampage"].Punch.Event:FireServer()
+end
+wait(0.3)
+game:GetService("ReplicatedStorage"):FindFirstChild("AfterImageEvent"):FireServer()
    end    
 })
 
@@ -655,12 +719,16 @@ end
 })
 
 Tab:AddButton({
- Name = "Safety precautions",
+ Name = "Shadow Dash",
  Callback = function()
-for i = 1, 100 do
- wait(0.1)
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Vanish"):FireServer()
-end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Hollow Mask",
+ Callback = function()
+        game:GetService("Players").LocalPlayer.Backpack["Hollow Mask"].HollowMask.Remote:FireServer()
    end    
 })
 
@@ -915,7 +983,7 @@ end
 Tab:AddDropdown({
 	Name = "Input Character",
 	Default = "1",
-	Options = {"Gojo", "Sukuma", "Toji", "Saitama", "Luffy", "Hakari", "Sakuya", "Kenjaku", "Ichigo", "Ayanojoki", "Manjiro"},
+	Options = {"Gojo", "Sukuma", "Toji", "Saitama", "Luffy", "Hakari", "Sakuya", "Gyutaro", "Kenjaku", "Ichigo", "Ayanojoki", "Manjiro"},
 	Callback = function(Value)
 		if Value == "Gojo" then
 		local args = {
@@ -965,6 +1033,11 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
+end
+if Value == "Gyutaro" then
+local ohString1 = "Gyutaro"
+
+game:GetService("ReplicatedStorage").Picked:FireServer(ohString1)
 end
 if Value == "Kenjaku" then
 local args = {
