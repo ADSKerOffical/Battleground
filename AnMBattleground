@@ -813,6 +813,46 @@ end
    end    
 })
 
+Tab:AddDropdown({
+	Name = "Leg Mastery",
+	Default = "1",
+	Options = {"Suddenness", "Ultra instinct", "Series of Strikes"},
+	Callback = function(Value)
+		if Value == "Suddenness" then
+		for i = 1, 15 do
+game:GetService("Players").LocalPlayer.Backpack["Strongest Kick"].BlackFlash.Event:FireServer()
+end
+wait(0.7)
+game:GetService("ReplicatedStorage"):FindFirstChild("AfterImageEvent"):FireServer()
+		end
+		if Value == "Ultra instinct" then
+count = 0
+	repeat wait(0.8)
+	count = count + 1
+		for i = 1, 15 do
+game:GetService("Players").LocalPlayer.Backpack["Strongest Kick"].BlackFlash.Event:FireServer()
+end
+wait(0.7)
+game:GetService("ReplicatedStorage"):FindFirstChild("AfterImageEvent"):FireServer()
+until count == 5
+		end
+		if Value == "Series of Strikes" then
+count = 0
+last_pick_sin_mrazy = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	repeat wait(0.2)
+  count = count + 1
+	game:GetService("ReplicatedStorage"):FindFirstChild("AfterImageEvent"):FireServer()
+	task.wait(0.1)
+	for i = 1, 30 do
+game:GetService("Players").LocalPlayer.Backpack["Under Kick"].LocalScript.Event:FireServer()
+end
+	until count == 10
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = last_pick_sin_mrazy
+		end
+	end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Options",
 	Icon = "rbxassetid://4483345998",
