@@ -400,6 +400,23 @@ end
 })
 
 Tab:AddButton({
+ Name = "Powerful Projectile",
+ Callback = function()
+        wait(1.5)
+for i = 1, 10 do
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+
+local targetPosition = mouse.Hit.Position
+local ohCFrame1 = CFrame.new(targetPosition)
+local ohVector32 = Vector3.new(targetPosition.X, targetPosition.Y, targetPosition.Z)
+
+game:GetService("ReplicatedStorage").Remotes.PachinkoBall:FireServer(ohCFrame1, ohVector32)
+end
+   end    
+})
+
+Tab:AddButton({
 	Name = "Transformation",
 	Callback = function()
       		game:GetService("ReplicatedStorage"):WaitForChild("Domainthing"):FireServer()
