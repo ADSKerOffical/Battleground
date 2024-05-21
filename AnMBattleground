@@ -2948,6 +2948,37 @@ end
    end    
 })
 
+Tab:AddButton({
+ Name = "Black Hole",
+ Callback = function()
+        local player = game.Players.LocalPlayer
+
+local hasTool = false
+for _, tool in ipairs(player.Backpack:GetChildren()) do
+    if tool.Name == "Chimera Shadow Garden" or tool.Name == "Sukuna" then
+        hasTool = true
+        break
+    end
+end
+
+if not hasTool then
+ local ohString1 = "Megumi / Sukuna"
+
+game:GetService("ReplicatedStorage").Picked:FireServer(ohString1)
+  wait(0.3)
+for i = 1, 60 do
+game:GetService("Players").LocalPlayer.Backpack["Chimera Shadow Garden"].Use.RemoteEvent:FireServer()
+end
+  end
+
+if hasTool then
+for i = 1, 60 do
+game:GetService("Players").LocalPlayer.Backpack["Chimera Shadow Garden"].Use.RemoteEvent:FireServer()
+end
+end
+   end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Dev ability's",
 	Icon = "rbxassetid://4483345998",
