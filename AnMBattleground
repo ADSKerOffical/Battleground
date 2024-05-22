@@ -2934,24 +2934,28 @@ Tab:AddButton({
    end    
 })
 
-Tab:AddButton({
- Name = "Supernova",
- Callback = function()
-        for i = 1, 500 do
+Tab:AddDropdown({
+	Name = "Cosmic abilities",
+	Default = "1",
+	Options = {"Supernova", "Hypernova", "Black Hole", "Star of Death"},
+	Callback = function(Value)
+		if Value == "Supernova" then
+		for i = 1, 500 do
 local args = {
     [1] = false,
     [2] = Vector3.new(math.random(-1e3, 1e3), 10, math.random(-1e3, 1e3))
 }
-
 game:GetService("ReplicatedStorage"):WaitForChild("Kamehameha"):WaitForChild("Remotes"):WaitForChild("KamehamehaEvent"):FireServer(unpack(args))
 end
-   end    
-})
-
-Tab:AddButton({
- Name = "Black Hole",
- Callback = function()
-        local player = game.Players.LocalPlayer
+		end
+		if Value == "Hypernova" then
+		for i = 1, 100 do
+local ohString1 = "FinalHollowPurple"
+game:GetService("ReplicatedStorage").Events.Abilitys.Gojo:FireServer(ohString1)
+end
+		end
+		if Value == "Black Hole" then
+		local player = game.Players.LocalPlayer
 
 local hasTool = false
 for _, tool in ipairs(player.Backpack:GetChildren()) do
@@ -2976,7 +2980,37 @@ for i = 1, 60 do
 game:GetService("Players").LocalPlayer.Backpack["Chimera Shadow Garden"].Use.RemoteEvent:FireServer()
 end
 end
-   end    
+		end
+		if Value == "Star of Death" then
+		local function One()
+local spinSpeed = 20
+local Spin = Instance.new("BodyAngularVelocity")
+Spin.Name = "Spinning"
+Spin.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+Spin.MaxTorque = Vector3.new(0, math.huge, 0)
+Spin.AngularVelocity = Vector3.new(0,spinSpeed,0)
+local ohString1 = "Ichigo Vasto Lorde"
+game:GetService("ReplicatedStorage").Picked:FireServer(ohString1)
+  wait(0.1)
+for i = 1, 100 do
+ wait()
+  game:GetService("Players").LocalPlayer.Backpack.Cero.LocalScript.Event:FireServer()
+ end
+end
+
+local function Two()
+speaker = game.Players.LocalPlayer
+for i,v in pairs(speaker.Character:GetDescendants()) do
+  if v:IsA("BodyVelocity") or v:IsA("BodyGyro") or v:IsA("RocketPropulsion") or v:IsA("BodyThrust") or v:IsA("BodyAngularVelocity") or v:IsA("AngularVelocity") or v:IsA("BodyForce") or v:IsA("VectorForce") or v:IsA("LineForce") then
+   v:Destroy()
+  end
+ end
+end
+
+One()
+Two()
+		end
+	end    
 })
 
 local Tab = Window:MakeTab({
