@@ -654,7 +654,7 @@ for _, player in ipairs(players) do
     if player.Character then
         local args = {
             [1] = player.Character.HumanoidRootPart.CFrame,
-            [2] = 1000000
+            [2] = math.huge
         }
 
         game:GetService("Players").LocalPlayer.Character:FindFirstChild("Mini Uzumaki").FireServer.RemoteEvent:FireServer(unpack(args))
@@ -2227,6 +2227,13 @@ repeat
   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Wd
    game.Players.LocalPlayer.Character.Humanoid.JumpPower  = 65
 until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+   end    
+})
+
+Tab:AddButton({
+ Name = "Denji Gui",
+ Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/Denji/main/Gui"))()
    end    
 })
 
