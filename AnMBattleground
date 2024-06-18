@@ -9,6 +9,82 @@ local Tab = Window:MakeTab({
 })
 
 local Section = Tab:AddSection({
+	Name = "Gojo Young"
+})
+
+Tab:AddLabel("Form 1")
+
+Tab:AddButton({
+ Name = "Super Red",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack.Red.aka.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Super Pull",
+ Callback = function()
+        for i = 1, 100 do
+game:GetService("Players").LocalPlayer.Backpack["Technique Pull"].ao.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Cursed Technique Red",
+ Callback = function()
+        for i = 1, 15 do
+game:GetService("Players").LocalPlayer.Backpack["Cursed Technique Red"].Skill.Red:FireServer()
+end
+   end    
+})
+
+
+Tab:AddButton({
+ Name = "Powerful Maximum Output Blue",
+ Callback = function()
+        for i = 1, 5 do
+            local ohTable1 = {
+    ["Function"] = "Fire",
+    ["Name"] = "BlueMo",
+    ["rootpos"] = CFrame.new(39.0846443, 19.8230076, -162.294754, -0.0822739899, 3.01816527e-08, 0.996609747, -4.96030914e-08, 1, -3.43792514e-08, -0.996609747, -5.22634416e-08, -0.0822739899)
+}
+
+game:GetService("ReplicatedStorage").Server:InvokeServer(ohTable1)
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Transformation (The Honored One)",
+ Callback = function()
+game:GetService("Players").LocalPlayer.Backpack["The Honored One"].Script.Event:FireServer()
+   end    
+})
+
+Tab:AddLabel("Form 2")
+
+
+Tab:AddButton({
+ Name = "Powerful Technique Red",
+ Callback = function()
+        for i = 1, 15 do
+game:GetService("Players").LocalPlayer.Backpack["Technique Red"].Skill.Red:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Imaginary Technique: Purple",
+ Callback = function()
+game:GetService("Players").LocalPlayer.Backpack["Imaginary Technique Purple"]["Imaginary Purple"].Event:FireServer()
+   end    
+})
+
+
+local Section = Tab:AddSection({
 	Name = "Gojo"
 })
 
@@ -44,7 +120,7 @@ Tab:AddButton({
    end    
 })
 
-Tab:AddLabel("Gear 2")
+Tab:AddLabel("Form 2")
 
 Tab:AddButton({
  Name = "Maximum Red",
@@ -99,7 +175,7 @@ Tab:AddButton({
    end    
 })
 
-Tab:AddLabel("Gear 3")
+Tab:AddLabel("Form 3")
 
 Tab:AddButton({
  Name = "Powerful Black Flash",
@@ -3101,10 +3177,25 @@ Tab:AddButton({
 
 OrionLib:MakeNotification({
  Name = "Budgie Hub",
- Content = "Creator – MEGACOCONUT",
+ Content = "Creator – MEGACOCONUT (ADSKerX) and Hamsterovich (Wolfdmitrich)",
  Image = "rbxassetid://4483345998",
  Time = 5
 })
+
+local Tab = Window:MakeTab({
+	Name = "Creators",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddParagraph("MEGACOCONUT","The main creator of this script. did a lot of different functions and scripts")
+Tab:AddParagraph("Wolfdmitrich","Web scripter who knows: Python, Html, CSS and a little Lua. He did a lot for this script, for example: I made an obfuscator for the script, helped me make admin commands, abilities for characters, and so on")
+
+local function AntiKick()
+xpcall(function() OldNameCall = hookmetamethod(game.Players.LocalPlayer, "__namecall", function(Self, ...) local Args = {...} local NamecallMethod = getnamecallmethod() if Self == game.Players.LocalPlayer and NamecallMethod == "Kick" then return nil end return OldNameCall(Self, ...) end) print("Anti Kick Enabled.") end, function(e) print(e) end)
+end
+
+AntiKick()
 
 local function DS()
   if game.Players.LocalPlayer.UserId ~= 4636825706 and game.Players.LocalPlayer.UserId ~= 5042713445 then
