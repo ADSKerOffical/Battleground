@@ -988,90 +988,18 @@ end
 Tab:AddDropdown({
 	Name = "Input Character",
 	Default = "1",
-	Options = {"Gojo", "Sukuma", "Toji", "Saitama", "Luffy", "Hakari", "Sakuya", "Gyutaro", "Kenjaku", "Ichigo", "Ayanojoki", "Manjiro"},
+	Options = {
+		"Gojo Young", "Yuji / Sukuna", "Toji", "Denji", "Goku Black", "Muichiro", "Akaza", "Zenitsu", 
+		"Tanjiro Sun", "Rengoku", "Garou", "Giyu", "Saitama", "Gyutaro", "Sakuya", "Gojo", "Goku Ultra", 
+		"Zoro", "Yuta", "Luffy", "Shadow", "Kenjaku", "Vergil", "Megumi / Sukuna", "Green Hero", 
+		"Asta Demon", "Hakari", "Ichigo Vasto Lorde", "Ayanokoji", "Manjiro", "Ichigo"
+	},
 	Callback = function(Value)
-		if Value == "Gojo" then
-		local args = {
-    [1] = "Gojo"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
-		end
-		if Value == "Sukuma" then
-		local args = {
-    [1] = "Yuji / Sukuna"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
-		end
-		if Value == "Toji" then
-		local args = {
-    [1] = "Toji"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
-		end
-		if Value == "Saitama" then
-		local args = {
-    [1] = "Saitama"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
-		end
-		if Value == "Luffy" then
-		local args = {
-    [1] = "Luffy"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
-		end
-if Value == "Hakari" then
-local args = {
-    [1] = "Hakari"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
-end
-if Value == "Sakuya" then
-local args = {
-    [1] = "Sakuya"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
-end
-if Value == "Gyutaro" then
-local ohString1 = "Gyutaro"
-
-game:GetService("ReplicatedStorage").Picked:FireServer(ohString1)
-end
-if Value == "Kenjaku" then
-local args = {
-    [1] = "Kenjaku"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
-end
-if Value == "Ichigo" then
-local args = {
-    [1] = "Ichigo Vasto Lorde"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
-end
-if Value == "Ayanojoki" then
-local args = {
-    [1] = "Ayanokoji"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Picked"):FireServer(unpack(args))
-end
-if Value == "Manjiro" then
-local ohString1 = "Manjiro"
-
-game:GetService("ReplicatedStorage").Picked:FireServer(ohString1)
-end
-	end    
+		local args = { Value }
+		game:GetService("ReplicatedStorage").Picked:FireServer(unpack(args))
+	end
 })
+
 
 Tab:AddToggle({
 	Name = "Godmode",
@@ -1396,6 +1324,13 @@ Tab:AddButton({
  Name = "Replication Abilities",
  Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/ReplicationAbilityes/main/Gui"))()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Shutdown",
+ Callback = function()
+        OrionLib:Destroy()
    end    
 })
 
