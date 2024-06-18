@@ -1009,6 +1009,82 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = last_pick_sin_mrazy
 	end    
 })
 
+local Section = Tab:AddSection({
+ Name = "Ichigo"
+})
+
+Tab:AddButton({
+ Name = "Powerful Getsuga Barrage",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Getsuga Barrage"].LocalScript.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Getsuga Slash",
+ Callback = function()
+        for i = 1, 10 do
+game:GetService("Players").LocalPlayer.Backpack["Getsuga Slash"].LocalScript.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Getsuga Tensho",
+ Callback = function()
+        for i = 1, 15 do
+game:GetService("Players").LocalPlayer.Backpack["Getsuga Tensho"].LocalScript.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Powerful Speed Slash",
+ Callback = function()
+        for i = 1, 20 do
+game:GetService("Players").LocalPlayer.Backpack["Speed Slash"].LocalScript.Event:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Become Mugetsu",
+ Callback = function()
+        game:GetService("Players").LocalPlayer.Backpack["Final Getsuga Tensho"].LocalScript.Event:FireServer()
+   end    
+})
+
+Tab:AddLabel("Mugetsu Mode")
+
+Tab:AddButton({
+ Name = "Become Mugetsu v2",
+ Callback = function()
+        local ohString1 = "Ichigo"
+game:GetService("ReplicatedStorage").Picked:FireServer(ohString1)
+wait(0.2)
+game:GetService("Players").LocalPlayer.Backpack["Final Getsuga Tensho"].LocalScript.Event:FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Activate Mugetsu",
+ Callback = function()
+        game:GetService("Players").LocalPlayer.Backpack.Mugetsu.LocalScript.Event:FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Cover the Server",
+ Callback = function()
+        for i = 1, 100 do
+wait()
+game:GetService("Players").LocalPlayer.Backpack.Mugetsu.LocalScript.Event:FireServer()
+end
+   end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Options",
 	Icon = "rbxassetid://4483345998",
@@ -3166,6 +3242,27 @@ if Value == "M1_RS_Folder" then
 game:GetService("ReplicatedStorage").Chainsaw_Man_RS_Folder.Remotes.M1_RE:FireServer()
 end
       end
+})
+
+Tab:AddButton({
+ Name = "20-20-20 Dropkick",
+ Callback = function()
+        game:GetService("ReplicatedStorage").KJ.Remote.DropKick:FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Megumin",
+ Callback = function()
+        game:GetService("ReplicatedStorage").Megumin.Remote:FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Bad dog",
+ Callback = function()
+        game:GetService("ReplicatedStorage").AtomicFolder.gaydog:FireServer()
+   end    
 })
 
 Tab:AddButton({
