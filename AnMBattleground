@@ -3057,8 +3057,20 @@ Tab:AddButton({
 	Options = {"20-20-20 Dropkick", "Supersonic 20-20-20 Dropkick"},
 	Callback = function(Value)
 		if Value == "20-20-20 Dropkick" then
+local user = game.Players.LocalPlayer
+if user.UserId == 5199937747 or user.UserId == 5042713445 or user.UserId == 6036506267 then
 		game:GetService("ReplicatedStorage").KJ.Remote.DropKick:FireServer()
+else
+OrionLib:MakeNotification({
+	Name = "Budgie Hub",
+	Content = "Insufficient rights",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
 		elseif Value == "Supersonic 20-20-20 Dropkick" then
+local user = game.Players.LocalPlayer
+if user.UserId == 5199937747 or user.UserId == 5042713445 or user.UserId == 6036506267 then
 		local function ui()
     local counte = 1
     repeat wait(0.5)
@@ -3105,6 +3117,14 @@ wait(2)
 
 coroutine.wrap(ui)()
 coroutine.wrap(increaseSpeed)()
+else
+OrionLib:MakeNotification({
+	Name = "Budgie Hub",
+	Content = "Insufficient rights",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
 		end
 	end    
 })
@@ -3112,7 +3132,17 @@ coroutine.wrap(increaseSpeed)()
 Tab:AddButton({
  Name = "Megumin",
  Callback = function()
+local user = game.Players.LocalPlayer
+if user.UserId == 5199937747 or user.UserId == 5042713445 or user.UserId == 6036506267 then
         game:GetService("ReplicatedStorage").Megumin.Remote:FireServer()
+else
+OrionLib:MakeNotification({
+	Name = "Budgie Hub",
+	Content = "Insufficient rights",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
    end    
 })
 
