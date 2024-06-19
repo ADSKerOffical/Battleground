@@ -2,129 +2,6 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ion
 
 local Window = OrionLib:MakeWindow({Name = "Budgie Hub | AnM battlegrounds", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
--- Список ID премиум пользователей
-local premiumUsers = {
-    6036506267, -- Hamsterovich
-    -- 5042713445, -- Wolfdmitrich
-    -- 5199937747 -- ADSKerX
-}
-
--- Функция для проверки, является ли пользователь премиум
-local function isPremiumUser(userId)
-    for _, id in pairs(premiumUsers) do
-        if userId == id then
-            return true
-        end
-    end
-    return false
-end
-
--- Получение текущего пользователя
-local player = game.Players.LocalPlayer
-
--- Создание вкладки "Characters"
-local CharactersTab = Window:MakeTab({
-    Name = "Characters",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
--- Проверка, является ли текущий пользователь премиум
-if isPremiumUser(player.UserId) then
-    OrionLib:MakeNotification({
-        Name = "Congratulations!",
-        Content = "You have premium!",
-        Image = "rbxassetid://4483345998",
-        Time = 5
-    })
-
-    -- Создание вкладки для премиум пользователей
-    local PremiumTab = Window:MakeTab({
-        Name = "Premium Tab",
-        Icon = "rbxassetid://4483345998",
-        PremiumOnly = false
-    })
-
-    Tab:AddDropdown({
-	Name = "20-20-20 Dropkick",
-	Default = "1",
-	Options = {"20-20-20 Dropkick", "Supersonic 20-20-20 Dropkick"},
-	Callback = function(Value)
-		if Value == "20-20-20 Dropkick" then
-		game:GetService("ReplicatedStorage").KJ.Remote.DropKick:FireServer()
-		elseif Value == "Supersonic 20-20-20 Dropkick" then
-		local function ui()
-    local counte = 1
-    repeat wait(0.5)
-        counte = counte + 1
-        local player = game.Players.LocalPlayer
-        local parts = workspace:GetPartBoundsInRadius(player.Character:WaitForChild("HumanoidRootPart").Position, 80)
-        local foundEntity = false
-        for _, part in ipairs(parts) do
-            if (part:IsA("BasePart") or part:IsA("UnionOperation") or part:IsA("Model")) and not part.Anchored and part:IsDescendantOf(workspace) and not part:IsDescendantOf(player.Character) then
-                foundEntity = true
-                if part then
-                    player.Character:SetPrimaryPartCFrame(part.CFrame)
-                end
-                break
-            end
-        end
-        if foundEntity then
-            -- Do something when an entity is found
-        else
-            -- Do something when no entity is found
-        end
-    until counte == 10
-end
-
-local function increaseSpeed()
-    local player = game:GetService("Players").LocalPlayer
-    local character = player.Character
-    local humanoid = character:FindFirstChildWhichIsA("Humanoid")
-
-    local count = 1
-    repeat task.wait()
-        count = count + 1
-        humanoid.WalkSpeed = 400
-    until count == 210
-    wait()
-    humanoid.WalkSpeed = 16
-end
-
-for i = 1, 3 do  
-game:GetService("ReplicatedStorage").KJ.Remote.DropKick:FireServer()
-end
-
-wait(2)
-
-coroutine.wrap(ui)()
-coroutine.wrap(increaseSpeed)()
-		end
-	end    
-})
-
-Tab:AddButton({
- Name = "Megumin",
- Callback = function()
-        game:GetService("ReplicatedStorage").Megumin.Remote:FireServer()
-   end    
-})
-
-Tab:AddButton({
- Name = "Bad dog",
- Callback = function()
-        game:GetService("ReplicatedStorage").AtomicFolder.gaydog:FireServer()
-   end    
-})
-else
-    OrionLib:MakeNotification({
-        Name = "Access Denied",
-        Content = "This feature is available only for premium users.",
-        Image = "rbxassetid://4483345998",
-        Time = 5
-    })
-end
-
 local Tab = Window:MakeTab({
 	Name = "Characters",
 	Icon = "rbxassetid://4483345998",
@@ -3174,6 +3051,78 @@ Tab:AddButton({
    end    
 })
 
+    Tab:AddDropdown({
+	Name = "20-20-20 Dropkick",
+	Default = "1",
+	Options = {"20-20-20 Dropkick", "Supersonic 20-20-20 Dropkick"},
+	Callback = function(Value)
+		if Value == "20-20-20 Dropkick" then
+		game:GetService("ReplicatedStorage").KJ.Remote.DropKick:FireServer()
+		elseif Value == "Supersonic 20-20-20 Dropkick" then
+		local function ui()
+    local counte = 1
+    repeat wait(0.5)
+        counte = counte + 1
+        local player = game.Players.LocalPlayer
+        local parts = workspace:GetPartBoundsInRadius(player.Character:WaitForChild("HumanoidRootPart").Position, 80)
+        local foundEntity = false
+        for _, part in ipairs(parts) do
+            if (part:IsA("BasePart") or part:IsA("UnionOperation") or part:IsA("Model")) and not part.Anchored and part:IsDescendantOf(workspace) and not part:IsDescendantOf(player.Character) then
+                foundEntity = true
+                if part then
+                    player.Character:SetPrimaryPartCFrame(part.CFrame)
+                end
+                break
+            end
+        end
+        if foundEntity then
+            -- Do something when an entity is found
+        else
+            -- Do something when no entity is found
+        end
+    until counte == 10
+end
+
+local function increaseSpeed()
+    local player = game:GetService("Players").LocalPlayer
+    local character = player.Character
+    local humanoid = character:FindFirstChildWhichIsA("Humanoid")
+
+    local count = 1
+    repeat task.wait()
+        count = count + 1
+        humanoid.WalkSpeed = 400
+    until count == 210
+    wait()
+    humanoid.WalkSpeed = 16
+end
+
+for i = 1, 3 do  
+game:GetService("ReplicatedStorage").KJ.Remote.DropKick:FireServer()
+end
+
+wait(2)
+
+coroutine.wrap(ui)()
+coroutine.wrap(increaseSpeed)()
+		end
+	end    
+})
+
+Tab:AddButton({
+ Name = "Megumin",
+ Callback = function()
+        game:GetService("ReplicatedStorage").Megumin.Remote:FireServer()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Bad dog",
+ Callback = function()
+        game:GetService("ReplicatedStorage").AtomicFolder.gaydog:FireServer()
+   end    
+})
+
 Tab:AddDropdown({
 	Name = "Cosmic abilities",
 	Default = "1",
@@ -3442,6 +3391,13 @@ local Tab = Window:MakeTab({
 
 Tab:AddParagraph("ADSKerX","The main creator of this script. did a lot of different functions and scripts")
 Tab:AddParagraph("Wolfdmitrich","Web scripter who knows: Python, Html, CSS and a little Lua. He did a lot for this script, for example: I made an obfuscator for the script, helped me make admin commands, abilities for characters, and so on")
+
+-- Список ID премиум пользователей
+local premiumUsers = {
+    6036506267, -- Hamsterovich
+    -- 5042713445, -- Wolfdmitrich
+    -- 5199937747 -- ADSKerX
+}
 
 local function AntiKick()
 xpcall(function() OldNameCall = hookmetamethod(game.Players.LocalPlayer, "__namecall", function(Self, ...) local Args = {...} local NamecallMethod = getnamecallmethod() if Self == game.Players.LocalPlayer and NamecallMethod == "Kick" then return nil end return OldNameCall(Self, ...) end) print("Anti Kick Enabled.") end, function(e) print(e) end)
