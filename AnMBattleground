@@ -1115,6 +1115,22 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
+ Name = "Inject Infinity Yield",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+   end    
+})
+
+Tab:AddButton(
+    {
+        Name = "Reset",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
+        end
+    }
+)
+
+Tab:AddButton({
  Name = "Anti purple shot",
  Callback = function()
         local player = game:GetService("Players").LocalPlayer
